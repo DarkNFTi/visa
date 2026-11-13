@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Visa | Virtual Dummy Card Design Marketplace</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- QRCode.js for USDT BEP-20 Wallet QR Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Tailwind CSS with Custom Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EF4444',
+                            orange: '#F97316',
+                            amber: '#F59E0B',
+                            yellow: '#EAB308',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .brand-gradient {
+            background: linear-gradient(135deg, #DC2626 0%, #EA580C 50%, #FACC15 100%);
+        }
+        .brand-gradient-text {
+            background: linear-gradient(135deg, #EF4444 0%, #F97316 50%, #EAB308 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-aspect {
+            aspect-ratio: 1.586 / 1;
+        }
+        .card-tilt {
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+            transform-style: preserve-3d;
+        }
+        .card-tilt:hover {
+            transform: translateY(-6px) scale(1.015);
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Top Mandatory Compliance & Disclaimer Banner -->
+    <div class="brand-gradient text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center shadow-md z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span class="bg-black/30 px-2 py-0.5 rounded uppercase tracking-wider text-[11px] font-bold">Notice</span>
+            <span>All virtual cards are strictly <strong>DUMMY – NOT VALID FOR PAYMENT</strong> templates for UI/UX design, testing &amp; demos only.</span>
+        </div>
+    </div>
+
+    <!-- Main Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 glass-panel bg-white/85 dark:bg-zinc-950/85 border-b border-slate-200/80 dark:border-zinc-800/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#top" onclick="navigateTo('marketplace')" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl brand-gradient p-0.5 shadow-lg shadow-orange-500/25 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-zinc-950 rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid fa-credit-card text-transparent bg-clip-text brand-gradient text-lg sm:text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-black text-lg sm:text-xl tracking-tight">UNLIMITED <span class="brand-gradient-text">VISA</span></span>
+                        </div>
+                        <p class="text-[10px] uppercase tracking-widest text-slate-500 dark:text-zinc-400 font-semibold">Dummy Design Studio</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <button onclick="navigateTo('marketplace')" id="nav-marketplace" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-orange-500/10 text-orange-600 dark:text-amber-400">
+                        <i class="fa-solid fa-grip mr-1.5"></i>1,000 Designs
+                    </button>
+                    <button onclick="navigateTo('how-it-works')" id="nav-how-it-works" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">
+                        <i class="fa-solid fa-bolt mr-1.5"></i>BEP-20 Delivery
+                    </button>
+                    <button onclick="navigateTo('dashboard')" id="nav-dashboard" class="nav-btn hidden px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">
+                        <i class="fa-solid fa-layer-group mr-1.5"></i>My Dashboard
+                    </button>
+                    <button onclick="navigateTo('admin')" id="nav-admin" class="nav-btn hidden px-4 py-2 rounded-xl text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-500/10 transition-all">
+                        <i class="fa-solid fa-shield-halved mr-1.5"></i>Admin Panel
+                    </button>
+                </nav>
+
+                <!-- Right Controls: Theme Toggle & Auth -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Dark / Light Mode Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="Toggle Dark or Light Mode" title="Switch Dark / Light Mode"
+                        class="p-2.5 sm:p-3 rounded-xl border border-slate-200 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-900 hover:border-orange-500/50 text-slate-700 dark:text-amber-400 transition-all shadow-sm">
+                        <i id="themeIcon" class="fa-solid fa-sun text-base"></i>
+                    </button>
+
+                    <!-- Logged Out State -->
+                    <div id="authButtonsGuest" class="flex items-center gap-2">
+                        <button onclick="openAuthModal('login')" class="px-3.5 sm:px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-700 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-900 transition-all">
+                            Log In
+                        </button>
+                        <button onclick="openAuthModal('register')" class="px-4 sm:px-5 py-2.5 rounded-xl text-sm font-bold text-white brand-gradient shadow-lg shadow-orange-500/25 hover:opacity-95 active:scale-95 transition-all">
+                            Sign Up
+                        </button>
+                    </div>
+
+                    <!-- Logged In User State -->
+                    <div id="authButtonsUser" class="hidden items-center gap-2">
+                        <button onclick="navigateTo('dashboard')" class="flex items-center gap-2.5 pl-2.5 pr-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-orange-500/50 transition-all">
+                            <div class="w-7 h-7 rounded-lg brand-gradient flex items-center justify-center text-white font-bold text-xs overflow-hidden" id="headerUserAvatar">U</div>
+                            <div class="text-left hidden sm:block">
+                                <div class="text-xs font-bold leading-tight" id="headerUsername">User</div>
+                                <div class="text-[10px] text-emerald-500 font-semibold" id="headerOwnedCount">0 Cards</div>
+                            </div>
+                        </button>
+                        <button onclick="logoutUser()" title="Logout" class="p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 text-slate-500 hover:text-red-500 hover:border-red-500/40 transition-all">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-200">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 space-y-1.5">
+            <button onclick="navigateTo('marketplace'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-100 dark:hover:bg-zinc-900">
+                <i class="fa-solid fa-grip mr-2 text-orange-500"></i>1,000 Dummy Card Designs
+            </button>
+            <button onclick="navigateTo('how-it-works'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-100 dark:hover:bg-zinc-900">
+                <i class="fa-solid fa-bolt mr-2 text-amber-500"></i>USDT BEP-20 Delivery
+            </button>
+            <button onclick="navigateTo('dashboard'); toggleMobileMenu()" id="mobile-nav-dashboard" class="hidden w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-100 dark:hover:bg-zinc-900">
+                <i class="fa-solid fa-layer-group mr-2 text-emerald-500"></i>Customer Dashboard
+            </button>
+            <button onclick="navigateTo('admin'); toggleMobileMenu()" id="mobile-nav-admin" class="hidden w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-red-500 hover:bg-red-500/10">
+                <i class="fa-solid fa-shield-halved mr-2"></i>Admin Panel
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="top" class="flex-grow">
+
+        <!-- =========================================================
+             VIEW 1: MARKETPLACE & HERO SECTION
+        ========================================================== -->
+        <section id="view-marketplace" class="block">
+            
+            <!-- Hero Banner with Red-to-Yellow Gradient Aesthetic -->
+            <div class="relative overflow-hidden border-b border-slate-200 dark:border-zinc-800/80">
+                <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-red-600/20 blur-3xl pointer-events-none"></div>
+                <div class="absolute top-12 right-0 w-96 h-96 rounded-full bg-amber-400/20 blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                        
+                        <!-- Left Hero Copy -->
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/15 to-amber-500/15 border border-orange-500/30 text-orange-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                Limited Edition • 1,000 Unique Designs • $1 USDT (BEP-20)
+                            </div>
+                            
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08]">
+                                Premium Virtual <br class="hidden sm:inline">
+                                <span class="brand-gradient-text">Dummy Visa Designs</span> <br>
+                                For Creators &amp; QA.
+                            </h1>
+                            
+                            <p class="text-base sm:text-lg text-slate-600 dark:text-zinc-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                                Collect one-of-a-kind virtual card mockups with unique colorways, bespoke vector geometry, and fictional identifiers. Paid exclusively via <strong>USDT (BNB Smart Chain BEP-20)</strong> with automated delivery under 10 minutes.
+                            </p>
+
+                            <!-- Primary Hero Actions -->
+                            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                                <a href="#catalogSection" class="w-full sm:w-auto px-7 py-4 rounded-2xl text-white font-extrabold text-base brand-gradient shadow-xl shadow-orange-500/25 hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2.5">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    Browse 1,000 Cards ($1)
+                                </a>
+                                <button onclick="openSamplePreview()" class="w-full sm:w-auto px-6 py-4 rounded-2xl font-bold text-sm border border-slate-300 dark:border-zinc-700 bg-white/80 dark:bg-zinc-900/80 hover:border-orange-500 transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-eye text-orange-500"></i>
+                                    Inspect Card Specs
+                                </button>
+                            </div>
+
+                            <!-- Live Inventory Telemetry Bar -->
+                            <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-4 max-w-lg mx-auto lg:mx-0">
+                                <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 shadow-sm">
+                                    <div class="text-xl sm:text-2xl font-black brand-gradient-text" id="heroAvailableCount">1,000</div>
+                                    <div class="text-[11px] font-semibold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">Available Now</div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 shadow-sm">
+                                    <div class="text-xl sm:text-2xl font-black text-emerald-500" id="heroPriceDisplay">$1.00</div>
+                                    <div class="text-[11px] font-semibold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">USDT BEP-20</div>
+                                </div>
+                                <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 shadow-sm">
+                                    <div class="text-xl sm:text-2xl font-black text-amber-500">&lt; 10m</div>
+                                    <div class="text-[11px] font-semibold text-slate-500 dark:text-zinc-400 uppercase tracking-wider">Auto Delivery</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Hero Interactive 3D Card Showcase -->
+                        <div class="lg:col-span-5 flex flex-col items-center">
+                            <div id="heroShowcaseCard" class="w-full max-w-md animate-float cursor-pointer" onclick="cycleHeroCard()">
+                                <!-- Populated via JS -->
+                            </div>
+                            <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-zinc-400">
+                                <i class="fa-solid fa-rotate text-orange-500"></i>
+                                <span>Click card above to preview featured editions (#0001 – #1000)</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catalog & Filter Controls -->
+            <div id="catalogSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-orange-600 dark:text-amber-400">Unique Digital Vault</span>
+                        <h2 class="text-2xl sm:text-3xl font-black tracking-tight mt-1">Virtual Dummy Card Gallery</h2>
+                        <p class="text-sm text-slate-600 dark:text-zinc-400 mt-1">Each design is sold only once. Once purchased, it is permanently assigned to the buyer.</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 px-3.5 py-2 rounded-xl">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Non-functional artwork only • Zero financial value</span>
+                    </div>
+                </div>
+
+                <!-- Search & Filter Toolbar -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-sm mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
+                        <div class="lg:col-span-5 relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search by #ID (e.g. 0042), name, or fictional number..."
+                                class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                        </div>
+                        
+                        <div class="lg:col-span-3">
+                            <select id="seriesFilter" onchange="applyFilters()"
+                                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:border-orange-500">
+                                <option value="ALL">All 10 Artistic Series</option>
+                                <option value="Solaris">Solaris (Red-Gold)</option>
+                                <option value="Obsidian">Obsidian (Carbon Dark)</option>
+                                <option value="Aurora">Aurora (Neon Prism)</option>
+                                <option value="Royale">Royale (Imperial Gold)</option>
+                                <option value="Cybernetic">Cybernetic (Matrix Grid)</option>
+                                <option value="Velvet">Velvet (Crimson Luxe)</option>
+                                <option value="Nebula">Nebula (Cosmic Violet)</option>
+                                <option value="Sahara">Sahara (Amber Dunes)</option>
+                                <option value="Hologram">Hologram (Iridescent)</option>
+                                <option value="Titanium">Titanium (Brushed Steel)</option>
+                            </select>
+                        </div>
+
+                        <div class="lg:col-span-2">
+                            <select id="statusFilter" onchange="applyFilters()"
+                                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm font-medium focus:outline-none focus:border-orange-500">
+                                <option value="ALL">All Statuses</option>
+                                <option value="AVAILABLE">Available Only</option>
+                                <option value="SOLD">Sold Out</option>
+                            </select>
+                        </div>
+
+                        <div class="lg:col-span-2">
+                            <button onclick="resetFilters()" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-800 text-sm font-semibold transition-all">
+                                <i class="fa-solid fa-filter-circle-xmark mr-1.5 text-orange-500"></i>Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Summary & Top Pagination Info -->
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6 text-sm text-slate-600 dark:text-zinc-400">
+                    <div>
+                        Showing <span id="showingRange" class="font-bold text-slate-900 dark:text-white">1–24</span> of <span id="totalFilteredCount" class="font-bold text-slate-900 dark:text-white">1,000</span> unique dummy card designs
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs">Jump to Page:</span>
+                        <input type="number" id="jumpPageInput" min="1" max="42" value="1" onchange="jumpToPage(this.value)"
+                            class="w-16 px-2.5 py-1 rounded-lg bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-center text-xs font-bold">
+                        <span class="text-xs">of <span id="totalPagesLabel">42</span></span>
+                    </div>
+                </div>
+
+                <!-- Cards Grid -->
+                <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <!-- Bottom Pagination Controls -->
+                <div id="paginationControls" class="mt-10 flex flex-wrap items-center justify-center gap-2">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             VIEW 2: HOW IT WORKS & BLOCKCHAIN VERIFICATION INFO
+        ========================================================== -->
+        <section id="view-how-it-works" class="hidden py-12 sm:py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-500/15 text-orange-600 dark:text-amber-400">Automated Crypto Fulfillment</span>
+                    <h2 class="text-3xl sm:text-4xl font-black tracking-tight">How USDT (BEP-20) Delivery Works</h2>
+                    <p class="text-slate-600 dark:text-zinc-400">Our automated blockchain verification engine confirms BNB Smart Chain transactions and unlocks your high-resolution dummy card design within 10 minutes.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl brand-gradient text-white flex items-center justify-center font-black text-lg shadow-lg">1</div>
+                        <h3 class="font-bold text-lg">Choose Unique Design</h3>
+                        <p class="text-sm text-slate-600 dark:text-zinc-400">Browse 1,000 one-of-a-kind virtual dummy cards. Each item has a unique color scheme and fictional test ID.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl brand-gradient text-white flex items-center justify-center font-black text-lg shadow-lg">2</div>
+                        <h3 class="font-bold text-lg">Send $1 USDT (BEP-20)</h3>
+                        <p class="text-sm text-slate-600 dark:text-zinc-400">Scan the QR code or copy our official BNB Smart Chain (BEP-20) wallet address and send exact USDT.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl brand-gradient text-white flex items-center justify-center font-black text-lg shadow-lg">3</div>
+                        <h3 class="font-bold text-lg">On-Chain Verification</h3>
+                        <p class="text-sm text-slate-600 dark:text-zinc-400">Submit your Tx Hash. Our verifier validates the BSC USDT contract, recipient address, amount, and prevents hash reuse.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl brand-gradient text-white flex items-center justify-center font-black text-lg shadow-lg">4</div>
+                        <h3 class="font-bold text-lg">Instant Digital Asset</h3>
+                        <p class="text-sm text-slate-600 dark:text-zinc-400">Within 10 minutes of confirmation, your card is assigned to your dashboard with high-res PNG &amp; receipt downloads.</p>
+                    </div>
+                </div>
+
+                <!-- Official Payment Specification Box -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-orange-500/30 shadow-xl space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-zinc-800 pb-4">
+                        <div>
+                            <h3 class="text-xl font-black">Official Payment Parameters</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400">Always verify the network before broadcasting any transaction.</p>
+                        </div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
+                            <i class="fa-solid fa-circle-check"></i> BNB Smart Chain (BEP-20) Active
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+                            <div class="text-xs text-slate-500 dark:text-zinc-400 mb-1">Recipient Wallet Address (BEP-20)</div>
+                            <div class="font-mono text-xs sm:text-sm font-bold break-all select-all text-orange-600 dark:text-amber-400">0x20e1291250ba304577b870a245ecdb05618cb65d</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+                            <div class="text-xs text-slate-500 dark:text-zinc-400 mb-1">Accepted Token Contract (BSC USDT)</div>
+                            <div class="font-mono text-xs sm:text-sm font-bold break-all">0x55d398326f99059fF775485246999027B3197955</div>
+                        </div>
+                    </div>
+                    <div class="text-center pt-2">
+                        <button onclick="navigateTo('marketplace')" class="px-6 py-3 rounded-xl text-white font-bold brand-gradient shadow-lg hover:opacity-95 transition-all">
+                            Explore Card Designs Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             VIEW 3: CUSTOMER DASHBOARD
+        ========================================================== -->
+        <section id="view-dashboard" class="hidden py-10 sm:py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <!-- Dashboard Header -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl brand-gradient flex items-center justify-center text-white text-2xl font-black shadow-lg overflow-hidden" id="dashAvatar">U</div>
+                        <div>
+                            <div class="flex items-center gap-2.5 flex-wrap">
+                                <h1 class="text-2xl font-black" id="dashUsername">Customer</h1>
+                                <span id="dashRoleBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-orange-500/15 text-orange-600 dark:text-amber-400 uppercase">Customer</span>
+                            </div>
+                            <p class="text-sm text-slate-500 dark:text-zinc-400" id="dashEmail">user@example.com</p>
+                            <p class="text-xs text-slate-400 dark:text-zinc-500 mt-0.5" id="dashMemberSince">Member since 2026</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button onclick="navigateTo('marketplace')" class="px-4 py-2.5 rounded-xl text-sm font-bold text-white brand-gradient shadow-md hover:opacity-95 transition-all">
+                            <i class="fa-solid fa-plus mr-1.5"></i>Buy Another Card ($1)
+                        </button>
+                        <button onclick="logoutUser()" class="px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 dark:border-zinc-800 hover:border-red-500/50 hover:text-red-500 transition-all">
+                            <i class="fa-solid fa-right-from-bracket mr-1.5"></i>Logout
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-zinc-800 pb-3">
+                    <button onclick="switchDashTab('purchased')" id="dash-tab-purchased" class="dash-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-orange-500/15 text-orange-600 dark:text-amber-400 whitespace-nowrap">
+                        <i class="fa-solid fa-credit-card mr-1.5"></i>My Purchased Cards (<span id="dashCardCountBadge">0</span>)
+                    </button>
+                    <button onclick="switchDashTab('orders')" id="dash-tab-orders" class="dash-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap">
+                        <i class="fa-solid fa-receipt mr-1.5"></i>Transaction History
+                    </button>
+                    <button onclick="switchDashTab('settings')" id="dash-tab-settings" class="dash-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap">
+                        <i class="fa-solid fa-gear mr-1.5"></i>Account Settings
+                    </button>
+                </div>
+
+                <!-- Tab 1: Purchased Cards Gallery -->
+                <div id="dash-panel-purchased" class="space-y-6">
+                    <div id="purchasedCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Tab 2: Payment & Order History -->
+                <div id="dash-panel-orders" class="hidden">
+                    <div class="rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 overflow-hidden shadow-sm">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-200 dark:border-zinc-800 text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-400 bg-slate-50 dark:bg-zinc-950/60">
+                                        <th class="py-3.5 px-4">Order ID</th>
+                                        <th class="py-3.5 px-4">Card Design</th>
+                                        <th class="py-3.5 px-4">Amount</th>
+                                        <th class="py-3.5 px-4">BEP-20 Tx Hash</th>
+                                        <th class="py-3.5 px-4">Status</th>
+                                        <th class="py-3.5 px-4">Delivery</th>
+                                        <th class="py-3.5 px-4 text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="userOrdersTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800 text-sm">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Account Settings -->
+                <div id="dash-panel-settings" class="hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-4">
+                            <h3 class="font-bold text-lg">Profile &amp; Appearance Preferences</h3>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 dark:text-zinc-400 mb-1">Display Username</label>
+                                <input type="text" id="settingsUsernameInput" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm">
+                            </div>
+                            <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+                                <div>
+                                    <div class="text-sm font-semibold">Interface Theme</div>
+                                    <div class="text-xs text-slate-500 dark:text-zinc-400">Saved automatically to your account</div>
+                                </div>
+                                <button onclick="toggleTheme()" class="px-4 py-2 rounded-xl text-xs font-bold brand-gradient text-white">
+                                    Switch Theme
+                                </button>
+                            </div>
+                            <button onclick="saveProfileSettings()" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white brand-gradient shadow-md">
+                                Save Profile Changes
+                            </button>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-4">
+                            <h3 class="font-bold text-lg">Security &amp; Role Verification</h3>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 dark:text-zinc-400 mb-1">New Password (min 8 chars)</label>
+                                <input type="password" id="settingsNewPassword" placeholder="Enter new password" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm">
+                            </div>
+                            <button onclick="updateUserPassword()" class="px-5 py-2.5 rounded-xl text-sm font-bold bg-slate-900 dark:bg-zinc-800 text-white hover:opacity-90">
+                                Update Password
+                            </button>
+                            <div class="pt-4 border-t border-slate-200 dark:border-zinc-800">
+                                <p class="text-xs text-slate-500 dark:text-zinc-400 mb-2">Role-Based Access Control (RBAC): Need to inspect the Administrator Panel?</p>
+                                <button onclick="requestAdminElevation()" class="px-4 py-2 rounded-xl text-xs font-bold border border-red-500/40 text-red-600 dark:text-red-400 hover:bg-red-500/10 transition-all">
+                                    <i class="fa-solid fa-shield-halved mr-1.5"></i>Activate Admin Role on Account
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =========================================================
+             VIEW 4: ADMIN DASHBOARD (ROLE-BASED ACCESS CONTROL)
+        ========================================================== -->
+        <section id="view-admin" class="hidden py-10 sm:py-14">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                
+                <!-- Admin Header -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-zinc-900 text-white border border-red-500/30 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="fa-solid fa-shield-halved"></i> Role-Based Admin Console
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl font-black">Unlimited Visa Control Center</h1>
+                        <p class="text-sm text-zinc-400 mt-1">Manage 1,000-card inventory, dynamic pricing, USDT BEP-20 ledger, and registered user accounts.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="openAddCardModal()" class="px-5 py-3 rounded-xl text-sm font-bold text-white brand-gradient shadow-lg hover:opacity-95 transition-all">
+                            <i class="fa-solid fa-plus mr-1.5"></i>Add Dummy Card Design
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Admin KPI Metrics -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-zinc-400 uppercase">Total Revenue</div>
+                        <div class="text-2xl sm:text-3xl font-black text-emerald-500 mt-1" id="adminTotalRevenue">$0.00</div>
+                        <div class="text-xs text-slate-400 mt-1">USDT (BEP-20) Confirmed</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-zinc-400 uppercase">Available Inventory</div>
+                        <div class="text-2xl sm:text-3xl font-black brand-gradient-text mt-1" id="adminAvailableCards">1,000</div>
+                        <div class="text-xs text-slate-400 mt-1"><span id="adminSoldCards">0</span> Sold / Assigned</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-zinc-400 uppercase">Registered Users</div>
+                        <div class="text-2xl sm:text-3xl font-black text-amber-500 mt-1" id="adminTotalUsers">0</div>
+                        <div class="text-xs text-slate-400 mt-1">Verified Accounts</div>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+                        <div class="text-xs font-semibold text-slate-500 dark:text-zinc-400 uppercase">Global Card Price</div>
+                        <div class="flex items-center gap-2 mt-1">
+                            <input type="number" id="adminGlobalPriceInput" step="0.5" min="0.5" value="1.00"
+                                class="w-24 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-zinc-950 border border-slate-300 dark:border-zinc-700 font-black text-lg">
+                            <button onclick="updateGlobalPrice()" class="px-3 py-1.5 rounded-lg text-xs font-bold brand-gradient text-white">Set</button>
+                        </div>
+                        <div class="text-xs text-slate-400 mt-1">USDT per virtual card</div>
+                    </div>
+                </div>
+
+                <!-- Admin Navigation Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar border-b border-slate-200 dark:border-zinc-800 pb-3">
+                    <button onclick="switchAdminTab('orders')" id="admin-tab-orders" class="admin-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-red-500/15 text-red-600 dark:text-red-400 whitespace-nowrap">
+                        <i class="fa-solid fa-money-bill-transfer mr-1.5"></i>Orders &amp; USDT Hashes
+                    </button>
+                    <button onclick="switchAdminTab('inventory')" id="admin-tab-inventory" class="admin-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap">
+                        <i class="fa-solid fa-boxes-stacked mr-1.5"></i>Manage 1,000 Inventory
+                    </button>
+                    <button onclick="switchAdminTab('users')" id="admin-tab-users" class="admin-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap">
+                        <i class="fa-solid fa-users mr-1.5"></i>Registered Users
+                    </button>
+                </div>
+
+                <!-- Admin Tab 1: Orders & USDT Transactions -->
+                <div id="admin-panel-orders" class="rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-200 dark:border-zinc-800 text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-400 bg-slate-50 dark:bg-zinc-950/60">
+                                    <th class="py-3.5 px-4">Order / Date</th>
+                                    <th class="py-3.5 px-4">Buyer</th>
+                                    <th class="py-3.5 px-4">Card ID</th>
+                                    <th class="py-3.5 px-4">USDT Amount</th>
+                                    <th class="py-3.5 px-4">Tx Hash (BEP-20)</th>
+                                    <th class="py-3.5 px-4">Status</th>
+                                    <th class="py-3.5 px-4 text-right">Control</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminOrdersTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800 text-sm">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Admin Tab 2: Inventory Management -->
+                <div id="admin-panel-inventory" class="hidden space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input type="text" id="adminInventorySearch" oninput="renderAdminInventory()" placeholder="Search inventory by Card ID (#0001 - #1000) or Name..."
+                            class="flex-grow px-4 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-sm">
+                    </div>
+                    <div class="rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-slate-200 dark:border-zinc-800 text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-400 bg-slate-50 dark:bg-zinc-950/60">
+                                        <th class="py-3.5 px-4">Card ID</th>
+                                        <th class="py-3.5 px-4">Design Title &amp; Series</th>
+                                        <th class="py-3.5 px-4">Fictional Number</th>
+                                        <th class="py-3.5 px-4">Price (USDT)</th>
+                                        <th class="py-3.5 px-4">Status</th>
+                                        <th class="py-3.5 px-4 text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminInventoryTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800 text-sm">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Tab 3: Users Management -->
+                <div id="admin-panel-users" class="hidden rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-200 dark:border-zinc-800 text-xs uppercase tracking-wider text-slate-500 dark:text-zinc-400 bg-slate-50 dark:bg-zinc-950/60">
+                                    <th class="py-3.5 px-4">Username</th>
+                                    <th class="py-3.5 px-4">Email</th>
+                                    <th class="py-3.5 px-4">Role</th>
+                                    <th class="py-3.5 px-4">Cards Owned</th>
+                                    <th class="py-3.5 px-4">Account Status</th>
+                                    <th class="py-3.5 px-4 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminUsersTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800 text-sm">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="border-t border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                    <span class="font-black text-xl tracking-tight">UNLIMITED <span class="brand-gradient-text">VISA</span></span>
+                    <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1 max-w-md">
+                        Digital marketplace for 1,000 unique virtual dummy card mockups. Exclusively powered by USDT (BNB Smart Chain BEP-20) automated verification.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-4 text-xs font-semibold text-slate-600 dark:text-zinc-400">
+                    <button onclick="navigateTo('marketplace')" class="hover:text-orange-500">1,000 Card Gallery</button>
+                    <button onclick="navigateTo('how-it-works')" class="hover:text-orange-500">BEP-20 Verification</button>
+                    <button onclick="openAuthModal('login')" class="hover:text-orange-500">Customer Login</button>
+                </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-100 dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 text-xs text-slate-600 dark:text-zinc-400 leading-relaxed">
+                <strong>Legal &amp; Compliance Disclaimer:</strong> Unlimited Visa sells strictly non-functional graphical dummy card designs for UI/UX prototyping, software testing, and visual demonstration only. Every card bears the permanent notice <em>"DUMMY – NOT VALID FOR PAYMENT"</em> and uses fictional non-bank identifiers. These items are not financial instruments, debit/credit cards, or Visa-issued products, and cannot be used for purchases, ATM withdrawals, or monetary transfers.
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         MODAL 1: AUTHENTICATION (REGISTER / LOGIN / RECOVERY)
+    ========================================================== -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+        <div class="w-full max-w-md rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-2xl overflow-hidden">
+            <div class="p-6 sm:p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 id="authModalTitle" class="text-2xl font-black">Welcome Back</h2>
+                        <p id="authModalSubtitle" class="text-xs text-slate-500 dark:text-zinc-400 mt-0.5">Sign in to access your virtual dummy cards</p>
+                    </div>
+                    <button onclick="closeAuthModal()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-zinc-800 flex items-center justify-center text-slate-500 hover:text-red-500">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Mode Switcher Tabs -->
+                <div class="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-zinc-950 mb-6 text-xs font-bold">
+                    <button onclick="switchAuthMode('login')" id="tab-auth-login" class="py-2 rounded-lg bg-white dark:bg-zinc-800 shadow-sm">Login</button>
+                    <button onclick="switchAuthMode('register')" id="tab-auth-register" class="py-2 rounded-lg text-slate-500">Register</button>
+                    <button onclick="switchAuthMode('recovery')" id="tab-auth-recovery" class="py-2 rounded-lg text-slate-500">Recovery</button>
+                </div>
+
+                <!-- Form Error / Success Alert -->
+                <div id="authAlertBox" class="hidden mb-4 p-3 rounded-xl text-xs font-semibold"></div>
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Email Address</label>
+                        <input type="email" id="loginEmail" required placeholder="you@domain.com"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••••"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <button type="submit" id="loginSubmitBtn" class="w-full py-3.5 rounded-xl text-white font-extrabold text-sm brand-gradient shadow-lg shadow-orange-500/25 hover:opacity-95 transition-all">
+                        Sign In to Account
+                    </button>
+                </form>
+
+                <!-- REGISTER FORM -->
+                <form id="registerForm" onsubmit="handleRegister(event)" class="hidden space-y-3.5">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Username</label>
+                        <input type="text" id="regUsername" required minlength="3" maxlength="24" placeholder="AlexDesigner"
+                            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Email Address</label>
+                        <input type="email" id="regEmail" required placeholder="alex@domain.com"
+                            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Password (min 8 characters)</label>
+                        <input type="password" id="regPassword" required minlength="8" placeholder="Create strong password"
+                            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" required minlength="8" placeholder="Repeat password"
+                            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <button type="submit" id="registerSubmitBtn" class="w-full py-3.5 rounded-xl text-white font-extrabold text-sm brand-gradient shadow-lg shadow-orange-500/25 hover:opacity-95 transition-all">
+                        Create Free Account
+                    </button>
+                </form>
+
+                <!-- PASSWORD RECOVERY FORM -->
+                <form id="recoveryForm" onsubmit="handleRecovery(event)" class="hidden space-y-4">
+                    <p class="text-xs text-slate-500 dark:text-zinc-400">Enter your registered email address and we will send you a secure Firebase password reset link.</p>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Registered Email Address</label>
+                        <input type="email" id="recEmail" required placeholder="you@domain.com"
+                            class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm focus:outline-none focus:border-orange-500">
+                    </div>
+                    <button type="submit" id="recoverySubmitBtn" class="w-full py-3.5 rounded-xl text-white font-extrabold text-sm brand-gradient shadow-lg">
+                        Send Password Reset Email
+                    </button>
+                </form>
+
+                <!-- GOOGLE AUTHENTICATION PROVIDER -->
+                <div id="googleAuthSection" class="mt-5">
+                    <div class="relative flex py-2 items-center">
+                        <div class="flex-grow border-t border-slate-200 dark:border-zinc-800"></div>
+                        <span class="flex-shrink mx-3 text-[11px] font-bold uppercase tracking-wider text-slate-400">Or continue with</span>
+                        <div class="flex-grow border-t border-slate-200 dark:border-zinc-800"></div>
+                    </div>
+                    <button type="button" onclick="handleGoogleSignIn()" id="googleSignInBtn"
+                        class="mt-2 w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-950 hover:bg-slate-50 dark:hover:bg-zinc-800/80 text-slate-800 dark:text-zinc-100 font-bold text-sm shadow-sm transition-all flex items-center justify-center gap-3 active:scale-[0.99]">
+                        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24z"/>
+                            <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14z"/>
+                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96z"/>
+                        </svg>
+                        <span>Continue with Google</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         MODAL 2: USDT BEP-20 CHECKOUT & BLOCKCHAIN VERIFICATION
+    ========================================================== -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
+        <div class="w-full max-w-2xl rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-2xl overflow-hidden my-auto">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-slate-200 dark:border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl brand-gradient text-white flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-black text-base sm:text-lg">USDT (BEP-20) Express Checkout</h3>
+                        <p class="text-[11px] text-slate-500 dark:text-zinc-400">BNB Smart Chain Automated Verification</p>
+                    </div>
+                </div>
+                <button onclick="closeCheckoutModal()" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-zinc-800 flex items-center justify-center text-slate-500 hover:text-red-500">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6 max-h-[85vh] overflow-y-auto">
+                
+                <!-- Selected Card Summary -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center p-4 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+                    <div class="sm:col-span-5" id="checkoutCardPreview"></div>
+                    <div class="sm:col-span-7 space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-amber-400" id="checkoutCardSeries">Series</span>
+                            <span class="px-2 py-0.5 rounded bg-red-500/10 text-red-500 text-[10px] font-bold">DUMMY TEMPLATE</span>
+                        </div>
+                        <h4 class="text-lg font-black" id="checkoutCardTitle">Card #0001</h4>
+                        <p class="text-xs font-mono text-slate-500 dark:text-zinc-400" id="checkoutCardNumber">0000 DUMY 0001 TEST</p>
+                        <div class="pt-2 flex items-baseline justify-between border-t border-slate-200 dark:border-zinc-800">
+                            <span class="text-xs font-semibold text-slate-500">Total Due (BEP-20):</span>
+                            <span class="text-xl font-black text-emerald-500" id="checkoutAmountDue">1.00 USDT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Wallet Address & QR Code -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                    <div class="sm:col-span-4 flex flex-col items-center justify-center p-3 rounded-2xl bg-white border border-slate-200 shadow-inner">
+                        <div id="walletQrContainer" class="w-32 h-32 flex items-center justify-center"></div>
+                        <span class="text-[10px] font-bold text-zinc-700 mt-1.5 uppercase tracking-wider">Scan BEP-20 QR</span>
+                    </div>
+                    <div class="sm:col-span-8 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Official USDT (BEP-20) Deposit Address</span>
+                            <span class="px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-600 dark:text-amber-400 text-[11px] font-bold">BSC Mainnet</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-3 rounded-xl bg-slate-100 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800">
+                            <code class="text-xs font-mono font-bold break-all flex-grow select-all" id="depositWalletText">0x20e1291250ba304577b870a245ecdb05618cb65d</code>
+                            <button onclick="copyWalletAddress()" class="shrink-0 px-3 py-2 rounded-lg brand-gradient text-white text-xs font-bold hover:opacity-90">
+                                <i class="fa-regular fa-copy mr-1"></i>Copy
+                            </button>
+                        </div>
+                        <ul class="text-xs text-slate-500 dark:text-zinc-400 space-y-1">
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Send exact amount via <strong>BNB Smart Chain (BEP-20)</strong> only.</li>
+                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Each transaction hash can only be used once.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2: Submit Transaction Hash for Verification -->
+                <div class="space-y-3 pt-2 border-t border-slate-200 dark:border-zinc-800">
+                    <label class="block text-xs font-bold uppercase tracking-wider">Submit Your BEP-20 Transaction Hash (TxID)</label>
+                    <input type="text" id="txHashInput" placeholder="0x followed by 64 hexadecimal characters..."
+                        class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 font-mono text-xs sm:text-sm focus:outline-none focus:border-orange-500">
+                    
+                    <div id="verificationStatusBox" class="hidden p-4 rounded-2xl border text-xs space-y-2"></div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <button onclick="verifyBlockchainPayment('mainnet')" id="btnVerifyMainnet"
+                            class="w-full py-3.5 px-4 rounded-xl text-white font-extrabold text-xs sm:text-sm brand-gradient shadow-lg shadow-orange-500/20 hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-satellite-dish"></i>
+                            Verify On-Chain (BSC Mainnet)
+                        </button>
+                        <button onclick="verifyBlockchainPayment('sandbox')" id="btnVerifySandbox"
+                            class="w-full py-3.5 px-4 rounded-xl font-bold text-xs sm:text-sm border border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-flask"></i>
+                            Simulate Confirmed BEP-20 (QA Test)
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         MODAL 3: DIGITAL RECEIPT & HIGH-RES PNG DOWNLOAD
+    ========================================================== -->
+    <div id="receiptModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
+        <div class="w-full max-w-lg rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-2xl overflow-hidden my-auto">
+            <div class="brand-gradient p-6 text-white flex items-center justify-between">
+                <div>
+                    <span class="px-2.5 py-0.5 rounded-full bg-black/25 text-[10px] font-bold uppercase tracking-wider">Confirmed &amp; Delivered</span>
+                    <h3 class="text-xl font-black mt-1">Digital Asset Receipt</h3>
+                </div>
+                <button onclick="closeReceiptModal()" class="w-9 h-9 rounded-xl bg-black/20 flex items-center justify-center text-white hover:bg-black/35">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-5" id="receiptModalBody"></div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         MODAL 4: ADMIN ADD / EDIT DUMMY CARD MODAL
+    ========================================================== -->
+    <div id="adminCardModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="w-full max-w-md rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 shadow-2xl p-6 space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 id="adminCardModalTitle" class="text-xl font-black">Add New Dummy Card Design</h3>
+                <button onclick="closeAdminCardModal()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-zinc-800 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="adminCardForm" onsubmit="handleSaveAdminCard(event)" class="space-y-3.5">
+                <input type="hidden" id="editCardIdHidden">
+                <div>
+                    <label class="block text-xs font-bold mb-1">Design Title</label>
+                    <input type="text" id="adminCardName" required placeholder="e.g., Phoenix Ember Edition"
+                        class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Series</label>
+                        <select id="adminCardSeries" class="w-full px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm">
+                            <option value="Solaris">Solaris</option>
+                            <option value="Obsidian">Obsidian</option>
+                            <option value="Aurora">Aurora</option>
+                            <option value="Royale">Royale</option>
+                            <option value="Cybernetic">Cybernetic</option>
+                            <option value="Velvet">Velvet</option>
+                            <option value="Nebula">Nebula</option>
+                            <option value="Sahara">Sahara</option>
+                            <option value="Hologram">Hologram</option>
+                            <option value="Titanium">Titanium</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Price (USDT)</label>
+                        <input type="number" id="adminCardPrice" step="0.5" min="0.5" value="1.00" required
+                            class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Primary Gradient Color</label>
+                        <input type="color" id="adminCardColor1" value="#dc2626" class="w-full h-10 rounded-xl cursor-pointer bg-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Secondary Gradient Color</label>
+                        <input type="color" id="adminCardColor2" value="#facc15" class="w-full h-10 rounded-xl cursor-pointer bg-transparent">
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl text-white font-bold text-sm brand-gradient shadow-lg">
+                    Save Card to Live Inventory
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+    <!-- Offscreen High-Resolution Canvas for PNG Card Downloads -->
+    <canvas id="exportCardCanvas" width="1200" height="756" class="hidden"></canvas>
+
+    <!-- =========================================================
+         APPLICATION JAVASCRIPT & FIREBASE INTEGRATION
+    ========================================================== -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            GoogleAuthProvider,
+            signInWithPopup,
+            sendPasswordResetEmail,
+            updateProfile,
+            updatePassword,
+            signOut,
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
+        import {
+            getFirestore,
+            doc,
+            setDoc,
+            getDoc,
+            collection,
+            onSnapshot,
+            addDoc,
+            updateDoc
+        } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgR8e9ldw24ko9_orGgBgOp2OG6fCt5mM",
+            authDomain: "visa-58ccb.firebaseapp.com",
+            projectId: "visa-58ccb",
+            storageBucket: "visa-58ccb.firebasestorage.app",
+            messagingSenderId: "698415188058",
+            appId: "1:698415188058:web:c06fa521f470034a3cf063"
+        };
+
+        // Initialize Firebase
+        const firebaseApp = initializeApp(firebaseConfig);
+        const firebaseAuth = getAuth(firebaseApp);
+        const firebaseDb = getFirestore(firebaseApp);
+        const googleProvider = new GoogleAuthProvider();
+        googleProvider.setCustomParameters({ prompt: 'select_account' });
+
+        // =========================================================
+        // 1. GLOBAL CONFIGURATION & APPLICATION STATE
+        // =========================================================
+        const RECIPIENT_WALLET = "0x20e1291250ba304577b870a245ecdb05618cb65d";
+        const BSC_USDT_CONTRACT = "0x55d398326f99059ff775485246999027b3197955";
+        const BSC_MAINNET_RPC = "https://bsc-dataseed.binance.org/";
+        const ITEMS_PER_PAGE = 24;
+
+        const appState = {
+            theme: 'dark',
+            currentView: 'marketplace',
+            currentUser: null,
+            firebaseUser: null,
+            auth: firebaseAuth,
+            db: firebaseDb,
+            listenersAttached: false,
+            appId: firebaseConfig.projectId,
+            globalPrice: 1.00,
+            inventory: [],
+            filteredInventory: [],
+            currentPage: 1,
+            heroCardIndex: 0,
+            selectedCheckoutCard: null,
+            usersList: [],
+            ordersList: [],
+            inventoryOverrides: {},
+            customCards: [],
+            rateLimitTimestamps: []
+        };
+
+        // =========================================================
+        // 2. SECURITY, SANITIZATION & RATE-LIMIT UTILITIES
+        // =========================================================
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        function checkRateLimit() {
+            const now = Date.now();
+            appState.rateLimitTimestamps = appState.rateLimitTimestamps.filter(t => now - t < 15000);
+            if (appState.rateLimitTimestamps.length >= 10) {
+                showToast("Too many rapid requests. Please wait a few seconds.", "error");
+                return false;
+            }
+            appState.rateLimitTimestamps.push(now);
+            return true;
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+            const toast = document.createElement('div');
+            const styles = {
+                success: 'bg-emerald-600 text-white border-emerald-400/40',
+                error: 'bg-red-600 text-white border-red-400/40',
+                info: 'bg-zinc-900 text-white border-orange-500/40'
+            };
+            const icons = {
+                success: 'fa-circle-check',
+                error: 'fa-triangle-exclamation',
+                info: 'fa-circle-info'
+            };
+            toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3.5 rounded-2xl border shadow-2xl text-xs sm:text-sm font-semibold transition-all duration-300 ${styles[type] || styles.info}`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.info} text-base shrink-0"></i><span class="flex-grow">${escapeHTML(message)}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(8px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 4200);
+        }
+
+        // =========================================================
+        // 3. THEME PERSISTENCE (DARK / LIGHT MODE)
+        // =========================================================
+        function setTheme(theme, persist = true) {
+            appState.theme = theme === 'light' ? 'light' : 'dark';
+            const htmlEl = document.documentElement;
+            const iconEl = document.getElementById('themeIcon');
+
+            if (appState.theme === 'dark') {
+                htmlEl.classList.add('dark');
+                if (iconEl) iconEl.className = 'fa-solid fa-sun text-base';
+            } else {
+                htmlEl.classList.remove('dark');
+                if (iconEl) iconEl.className = 'fa-solid fa-moon text-base';
+            }
+
+            try {
+                localStorage.setItem('uv_theme', appState.theme);
+            } catch (_) {}
+
+            if (persist && appState.currentUser && appState.db) {
+                const userRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'users', appState.currentUser.id);
+                updateDoc(userRef, { theme: appState.theme }).catch(() => {});
+            }
+        }
+
+        window.toggleTheme = function () {
+            const nextTheme = appState.theme === 'dark' ? 'light' : 'dark';
+            setTheme(nextTheme, true);
+            showToast(`Switched to ${nextTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'info');
+        };
+
+        // =========================================================
+        // 4. PROCEDURAL 1,000 UNIQUE VIRTUAL DUMMY CARD GENERATOR
+        // =========================================================
+        const SERIES_CONFIG = [
+            { name: 'Solaris',    c1: '#DC2626', c2: '#FACC15', accent: '#FEF08A', pattern: 'waves' },
+            { name: 'Obsidian',   c1: '#18181B', c2: '#EA580C', accent: '#FDBA74', pattern: 'grid' },
+            { name: 'Aurora',     c1: '#059669', c2: '#0284C7', accent: '#A7F3D0', pattern: 'rings' },
+            { name: 'Royale',     c1: '#991B1B', c2: '#D97706', accent: '#FDE68A', pattern: 'prism' },
+            { name: 'Cybernetic', c1: '#0F172A', c2: '#E11D48', accent: '#FDA4AF', pattern: 'hex' },
+            { name: 'Velvet',     c1: '#7F1D1D', c2: '#DB2777', accent: '#FBCFE8', pattern: 'waves' },
+            { name: 'Nebula',     c1: '#4C1D95', c2: '#F59E0B', accent: '#FDE68A', pattern: 'rings' },
+            { name: 'Sahara',     c1: '#B45309', c2: '#FACC15', accent: '#FEF9C3', pattern: 'prism' },
+            { name: 'Hologram',   c1: '#BE123C', c2: '#0EA5E9', accent: '#BAE6FD', pattern: 'hex' },
+            { name: 'Titanium',   c1: '#27272A', c2: '#71717A', accent: '#F4F4F5', pattern: 'grid' }
+        ];
+
+        const EDITION_WORDS = [
+            'Apex', 'Nova', 'Pulse', 'Vortex', 'Ignis', 'Zenith', 'Eclipse', 'Helios', 'Flux', 'Aether',
+            'Spark', 'Mirage', 'Crest', 'Lumen', 'Horizon', 'Prism', 'Radiant', 'Solstice', 'Ember', 'Vector'
+        ];
+
+        function shiftHexHue(hex, deg) {
+            const clean = hex.replace('#', '');
+            let r = parseInt(clean.substring(0, 2), 16) / 255;
+            let g = parseInt(clean.substring(2, 4), 16) / 255;
+            let b = parseInt(clean.substring(4, 6), 16) / 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0;
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+            h = ((h * 360 + deg) % 360 + 360) % 360;
+            return `hsl(${Math.round(h)}, ${Math.round(s * 100)}%, ${Math.round(l * 100)}%)`;
+        }
+
+        function buildMasterInventory() {
+            const cards = [];
+
+            for (let i = 1; i <= 1000; i++) {
+                const padded = String(i).padStart(4, '0');
+                const cardId = `UV-${padded}`;
+                const seriesObj = SERIES_CONFIG[(i - 1) % SERIES_CONFIG.length];
+                const word = EDITION_WORDS[Math.floor((i - 1) / 10) % EDITION_WORDS.length];
+                const hueOffset = ((i * 17) % 50) - 25;
+
+                const override = appState.inventoryOverrides[cardId] || {};
+                if (override.deleted) continue;
+
+                cards.push({
+                    id: cardId,
+                    index: i,
+                    name: override.name || `${seriesObj.name} ${word} #${padded}`,
+                    series: override.series || seriesObj.name,
+                    color1: override.color1 || shiftHexHue(seriesObj.c1, hueOffset),
+                    color2: override.color2 || shiftHexHue(seriesObj.c2, -hueOffset),
+                    accent: seriesObj.accent,
+                    pattern: seriesObj.pattern,
+                    angle: (115 + (i * 13) % 70),
+                    fictionalNumber: `0000 DUMY ${padded} TEST`,
+                    validThru: '00/00',
+                    holderName: 'DUMMY SPECIMEN',
+                    price: override.price !== undefined ? Number(override.price) : appState.globalPrice,
+                    status: override.status || 'AVAILABLE',
+                    ownerId: override.ownerId || null,
+                    ownerName: override.ownerName || null
+                });
+            }
+
+            // Append any custom cards added by Admin
+            appState.customCards.forEach((c, idx) => {
+                const cardId = c.cardId || `UV-${String(1001 + idx).padStart(4, '0')}`;
+                const override = appState.inventoryOverrides[cardId] || {};
+                if (override.deleted || c.deleted) return;
+                cards.push({
+                    id: cardId,
+                    index: 1001 + idx,
+                    name: override.name || c.name || `Custom Edition ${cardId}`,
+                    series: override.series || c.series || 'Solaris',
+                    color1: override.color1 || c.color1 || '#DC2626',
+                    color2: override.color2 || c.color2 || '#FACC15',
+                    accent: '#FEF08A',
+                    pattern: 'waves',
+                    angle: 135,
+                    fictionalNumber: `0000 DUMY ${cardId.replace('UV-', '')} TEST`,
+                    validThru: '00/00',
+                    holderName: 'DUMMY SPECIMEN',
+                    price: override.price !== undefined ? Number(override.price) : Number(c.price || appState.globalPrice),
+                    status: override.status || c.status || 'AVAILABLE',
+                    ownerId: override.ownerId || c.ownerId || null,
+                    ownerName: override.ownerName || c.ownerName || null
+                });
+            });
+
+            appState.inventory = cards;
+
+            const availableCount = cards.filter(c => c.status === 'AVAILABLE').length;
+            const heroAvailEl = document.getElementById('heroAvailableCount');
+            if (heroAvailEl) heroAvailEl.textContent = availableCount.toLocaleString();
+
+            renderHeroShowcase();
+            applyFilters();
+            updateAuthUI();
+            if (appState.currentView === 'admin') renderAdminDashboard();
+            if (appState.currentView === 'dashboard') renderCustomerDashboard();
+        }
+
+        function renderCardSVG(card) {
+            const gradId = `grad-${card.id.replace(/[^a-zA-Z0-9]/g, '')}-${Math.floor(Math.random() * 100000)}`;
+            let patternMarkup = '';
+            if (card.pattern === 'waves') {
+                patternMarkup = `
+                    <path d="M-20 160 Q 110 90, 240 160 T 460 150 L 460 280 L -20 280 Z" fill="rgba(255,255,255,0.08)"/>
+                    <path d="M-20 195 Q 130 135, 270 195 T 460 185 L 460 280 L -20 280 Z" fill="rgba(255,255,255,0.06)"/>
+                `;
+            } else if (card.pattern === 'rings') {
+                patternMarkup = `
+                    <circle cx="340" cy="65" r="95" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="16"/>
+                    <circle cx="340" cy="65" r="55" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                `;
+            } else if (card.pattern === 'prism') {
+                patternMarkup = `
+                    <polygon points="240,0 420,0 320,265 150,265" fill="rgba(255,255,255,0.07)"/>
+                    <polygon points="310,0 420,0 420,210" fill="rgba(0,0,0,0.12)"/>
+                `;
+            } else if (card.pattern === 'hex') {
+                patternMarkup = `
+                    <polygon points="340,25 385,50 385,100 340,125 295,100 295,50" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+                    <polygon points="295,100 340,125 340,175 295,200 250,175 250,125" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+                `;
+            } else {
+                patternMarkup = `
+                    <line x1="0" y1="65" x2="420" y2="65" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                    <line x1="0" y1="130" x2="420" y2="130" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                    <line x1="0" y1="195" x2="420" y2="195" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                    <line x1="140" y1="0" x2="140" y2="265" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                    <line x1="280" y1="0" x2="280" y2="265" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                `;
+            }
+
+            return `
+            <svg viewBox="0 0 420 265" class="w-full h-auto rounded-2xl shadow-xl select-none block" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="${gradId}" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="${escapeHTML(card.color1)}"/>
+                        <stop offset="100%" stop-color="${escapeHTML(card.color2)}"/>
+                    </linearGradient>
+                </defs>
+                <rect width="420" height="265" rx="20" fill="url(#${gradId})"/>
+                ${patternMarkup}
+                <rect x="0.75" y="0.75" width="418.5" height="263.5" rx="19.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+                <!-- Top Row: Brand & Edition ID -->
+                <text x="24" y="34" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="900" font-size="14" letter-spacing="1.2">UNLIMITED VISA</text>
+                <text x="24" y="48" fill="rgba(255,255,255,0.8)" font-family="Inter, sans-serif" font-weight="600" font-size="9" letter-spacing="1.5">${escapeHTML(card.series.toUpperCase())} • ${escapeHTML(card.id)}</text>
+
+                <!-- Mandatory Compliance Badge -->
+                <rect x="208" y="20" width="188" height="22" rx="6" fill="rgba(0,0,0,0.48)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+                <text x="302" y="34.5" text-anchor="middle" fill="#FDE047" font-family="Inter, sans-serif" font-weight="800" font-size="8.6" letter-spacing="0.7">DUMMY – NOT VALID FOR PAYMENT</text>
+
+                <!-- Metallic EMV Chip Illustration -->
+                <rect x="24" y="76" width="46" height="34" rx="6" fill="#FACC15" fill-opacity="0.9"/>
+                <line x1="24" y1="88" x2="70" y2="88" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>
+                <line x1="24" y1="99" x2="70" y2="99" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>
+                <line x1="40" y1="76" x2="40" y2="110" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>
+                <line x1="54" y1="76" x2="54" y2="110" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>
+
+                <!-- Contactless Waves Icon -->
+                <path d="M84 87 A 10 10 0 0 1 84 99" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M89 83 A 15 15 0 0 1 89 103" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M94 79 A 20 20 0 0 1 94 107" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/>
+
+                <!-- Fictional Identification Number -->
+                <text x="24" y="158" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="20" letter-spacing="2.2">${escapeHTML(card.fictionalNumber)}</text>
+
+                <!-- Bottom Metadata -->
+                <text x="24" y="192" fill="rgba(255,255,255,0.7)" font-family="Inter, sans-serif" font-weight="700" font-size="8" letter-spacing="1.2">SPECIMEN HOLDER</text>
+                <text x="24" y="208" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12" letter-spacing="1">${escapeHTML(card.holderName)}</text>
+
+                <text x="200" y="192" fill="rgba(255,255,255,0.7)" font-family="Inter, sans-serif" font-weight="700" font-size="8" letter-spacing="1.2">VALID</text>
+                <text x="200" y="208" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="12">00/00</text>
+
+                <!-- Stylized VISA-Inspired Geometric Emblem -->
+                <text x="394" y="210" text-anchor="end" fill="#FFFFFF" font-family="Inter, sans-serif" font-style="italic" font-weight="900" font-size="26" letter-spacing="-1">VISA</text>
+                <text x="394" y="222" text-anchor="end" fill="rgba(255,255,255,0.85)" font-family="Inter, sans-serif" font-weight="800" font-size="7.5" letter-spacing="1.5">DUMMY MOCKUP</text>
+
+                <!-- Bottom Compliance Strip -->
+                <rect x="0" y="236" width="420" height="29" fill="rgba(0,0,0,0.38)"/>
+                <text x="210" y="254" text-anchor="middle" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="700" font-size="9" letter-spacing="1.4">FOR UI DESIGN &amp; TESTING ONLY • NON-FINANCIAL SPECIMEN</text>
+            </svg>`;
+        }
+
+        // =========================================================
+        // 5. HERO SHOWCASE & CATALOG RENDERING
+        // =========================================================
+        function renderHeroShowcase() {
+            const container = document.getElementById('heroShowcaseCard');
+            if (!container || appState.inventory.length === 0) return;
+            const featuredIndices = [0, 6, 13, 24, 41, 77, 108, 255];
+            const idx = featuredIndices[appState.heroCardIndex % featuredIndices.length];
+            const card = appState.inventory[idx] || appState.inventory[0];
+
+            container.innerHTML = `
+                <div class="p-3 rounded-3xl bg-white/80 dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 shadow-2xl">
+                    ${renderCardSVG(card)}
+                    <div class="mt-3 px-2 flex items-center justify-between text-xs">
+                        <div>
+                            <span class="font-black text-slate-900 dark:text-white">${escapeHTML(card.name)}</span>
+                            <span class="ml-2 font-mono text-slate-500">${escapeHTML(card.id)}</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-lg font-extrabold brand-gradient text-white">$${card.price.toFixed(2)} USDT</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        window.cycleHeroCard = function () {
+            appState.heroCardIndex++;
+            renderHeroShowcase();
+        };
+
+        window.openSamplePreview = function () {
+            const card = appState.inventory[0];
+            if (!card) return;
+            showToast(`Specimen ${card.id}: 1200×756px PNG, Series ${card.series}, Fictional ID ${card.fictionalNumber}`, 'info');
+            document.getElementById('catalogSection')?.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        window.applyFilters = function () {
+            const query = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+            const series = document.getElementById('seriesFilter')?.value || 'ALL';
+            const status = document.getElementById('statusFilter')?.value || 'ALL';
+
+            appState.filteredInventory = appState.inventory.filter(card => {
+                const matchesSeries = series === 'ALL' || card.series === series;
+                const matchesStatus = status === 'ALL' || card.status === status;
+                const matchesQuery = !query ||
+                    card.id.toLowerCase().includes(query) ||
+                    card.name.toLowerCase().includes(query) ||
+                    card.fictionalNumber.toLowerCase().includes(query) ||
+                    card.series.toLowerCase().includes(query);
+                return matchesSeries && matchesStatus && matchesQuery;
+            });
+
+            appState.currentPage = 1;
+            renderCatalogPage();
+        };
+
+        window.resetFilters = function () {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('seriesFilter').value = 'ALL';
+            document.getElementById('statusFilter').value = 'ALL';
+            applyFilters();
+        };
+
+        window.jumpToPage = function (pageVal) {
+            const totalPages = Math.max(1, Math.ceil(appState.filteredInventory.length / ITEMS_PER_PAGE));
+            const target = Math.min(totalPages, Math.max(1, parseInt(pageVal, 10) || 1));
+            appState.currentPage = target;
+            renderCatalogPage();
+        };
+
+        function renderCatalogPage() {
+            const grid = document.getElementById('cardsGrid');
+            if (!grid) return;
+
+            const total = appState.filteredInventory.length;
+            const totalPages = Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
+            if (appState.currentPage > totalPages) appState.currentPage = totalPages;
+
+            const startIdx = (appState.currentPage - 1) * ITEMS_PER_PAGE;
+            const endIdx = Math.min(total, startIdx + ITEMS_PER_PAGE);
+            const slice = appState.filteredInventory.slice(startIdx, endIdx);
+
+            document.getElementById('showingRange').textContent = total === 0 ? '0' : `${startIdx + 1}–${endIdx}`;
+            document.getElementById('totalFilteredCount').textContent = total.toLocaleString();
+            document.getElementById('totalPagesLabel').textContent = totalPages;
+            const jumpInput = document.getElementById('jumpPageInput');
+            if (jumpInput) {
+                jumpInput.max = totalPages;
+                jumpInput.value = appState.currentPage;
+            }
+
+            if (slice.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 space-y-3">
+                        <i class="fa-solid fa-magnifying-glass text-3xl text-slate-400"></i>
+                        <h3 class="text-lg font-bold">No matching dummy card designs</h3>
+                        <p class="text-xs text-slate-500">Try clearing your search or switching series filters.</p>
+                        <button onclick="resetFilters()" class="px-4 py-2 rounded-xl text-xs font-bold brand-gradient text-white">Reset Filters</button>
+                    </div>
+                `;
+            } else {
+                grid.innerHTML = slice.map(card => {
+                    const isSold = card.status === 'SOLD';
+                    const isOwnedByMe = appState.currentUser && card.ownerId === appState.currentUser.id;
+                    return `
+                        <div class="card-tilt rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-4 flex flex-col justify-between shadow-sm hover:shadow-xl">
+                            <div>
+                                <div class="relative">
+                                    ${renderCardSVG(card)}
+                                    ${isSold ? `
+                                        <div class="absolute inset-0 rounded-2xl bg-black/60 backdrop-blur-[2px] flex items-center justify-center">
+                                            <span class="px-4 py-1.5 rounded-xl bg-red-600 text-white font-black text-xs uppercase tracking-widest shadow-lg">
+                                                ${isOwnedByMe ? 'OWNED BY YOU' : 'SOLD OUT'}
+                                            </span>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                                <div class="mt-4 flex items-start justify-between gap-2">
+                                    <div>
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-300">${escapeHTML(card.id)}</span>
+                                            <span class="text-[11px] font-semibold text-orange-600 dark:text-amber-400">${escapeHTML(card.series)}</span>
+                                        </div>
+                                        <h3 class="font-bold text-sm mt-1.5 line-clamp-1">${escapeHTML(card.name)}</h3>
+                                    </div>
+                                    <div class="text-right shrink-0">
+                                        <div class="text-base font-black text-emerald-500">$${card.price.toFixed(2)}</div>
+                                        <div class="text-[10px] font-semibold text-slate-400">USDT</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-zinc-800/80">
+                                ${isOwnedByMe ? `
+                                    <button onclick="downloadCardPNG('${escapeHTML(card.id)}')" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold bg-emerald-600 hover:bg-emerald-500 text-white transition-all flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-download"></i>Download High-Res PNG
+                                    </button>
+                                ` : isSold ? `
+                                    <button disabled class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-100 dark:bg-zinc-800 text-slate-400 cursor-not-allowed">
+                                        Assigned to Collector
+                                    </button>
+                                ` : `
+                                    <button onclick="openCheckoutModal('${escapeHTML(card.id)}')" class="w-full py-2.5 px-4 rounded-xl text-xs font-extrabold text-white brand-gradient shadow-md shadow-orange-500/20 hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-cart-shopping"></i>Select &amp; Pay $1 USDT
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            renderPaginationControls(totalPages);
+        }
+
+        function renderPaginationControls(totalPages) {
+            const container = document.getElementById('paginationControls');
+            if (!container) return;
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const cur = appState.currentPage;
+            let html = `
+                <button onclick="jumpToPage(${cur - 1})" ${cur === 1 ? 'disabled' : ''}
+                    class="px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 disabled:opacity-40 hover:border-orange-500">
+                    <i class="fa-solid fa-chevron-left mr-1"></i>Prev
+                </button>
+            `;
+
+            const pages = new Set([1, totalPages, cur - 1, cur, cur + 1].filter(p => p >= 1 && p <= totalPages));
+            const sorted = Array.from(pages).sort((a, b) => a - b);
+
+            let prev = 0;
+            sorted.forEach(p => {
+                if (p - prev > 1) {
+                    html += `<span class="px-2 text-slate-400 text-xs">...</span>`;
+                }
+                html += `
+                    <button onclick="jumpToPage(${p})"
+                        class="w-9 h-9 rounded-xl text-xs font-extrabold transition-all ${p === cur ? 'brand-gradient text-white shadow-md' : 'bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 hover:border-orange-500'}">
+                        ${p}
+                    </button>
+                `;
+                prev = p;
+            });
+
+            html += `
+                <button onclick="jumpToPage(${cur + 1})" ${cur === totalPages ? 'disabled' : ''}
+                    class="px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 disabled:opacity-40 hover:border-orange-500">
+                    Next<i class="fa-solid fa-chevron-right ml-1"></i>
+                </button>
+            `;
+            container.innerHTML = html;
+        }
+
+        // =========================================================
+        // 6. FIREBASE AUTH STATE & REAL-TIME FIRESTORE LISTENERS
+        // =========================================================
+        function formatFirebaseAuthError(error) {
+            const code = error?.code || '';
+            const messages = {
+                'auth/email-already-in-use': 'This email address is already registered. Please log in instead.',
+                'auth/invalid-email': 'Please enter a valid email address.',
+                'auth/weak-password': 'Password is too weak. Use at least 8 characters.',
+                'auth/invalid-credential': 'Invalid email address or password.',
+                'auth/user-not-found': 'No account found with this email address.',
+                'auth/wrong-password': 'Incorrect password. Please try again.',
+                'auth/too-many-requests': 'Too many attempts. Please wait a moment and try again.',
+                'auth/popup-closed-by-user': 'Google sign-in popup was closed before completing.',
+                'auth/popup-blocked': 'Popup was blocked by your browser. Please allow popups for this site.',
+                'auth/unauthorized-domain': 'This domain is not yet added under Firebase Console → Authentication → Settings → Authorized domains.',
+                'auth/operation-not-allowed': 'This sign-in provider is not enabled yet in Firebase Console → Authentication → Sign-in method.'
+            };
+            return messages[code] || error?.message || 'Authentication failed. Please try again.';
+        }
+
+        async function syncAuthenticatedUserProfile(fbUser, preferredUsername = null) {
+            const uid = fbUser.uid;
+            const userDocRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'users', uid);
+            const fallbackName = preferredUsername || fbUser.displayName || (fbUser.email ? fbUser.email.split('@')[0] : 'VisaUser');
+
+            let profileData = {
+                id: uid,
+                uid: uid,
+                username: fallbackName,
+                email: (fbUser.email || '').toLowerCase(),
+                photoURL: fbUser.photoURL || '',
+                provider: fbUser.providerData?.[0]?.providerId || 'password',
+                role: 'customer',
+                theme: appState.theme,
+                status: 'active',
+                createdAt: Date.now()
+            };
+
+            try {
+                const snap = await getDoc(userDocRef);
+                if (snap.exists()) {
+                    profileData = { ...profileData, ...snap.data(), id: uid };
+                    if (fbUser.photoURL && !profileData.photoURL) {
+                        profileData.photoURL = fbUser.photoURL;
+                        await updateDoc(userDocRef, { photoURL: fbUser.photoURL }).catch(() => {});
+                    }
+                } else {
+                    await setDoc(userDocRef, profileData, { merge: true });
+                }
+            } catch (err) {
+                console.warn("Firestore profile sync notice:", err.message);
+            }
+
+            if (profileData.status === 'suspended') {
+                await signOut(appState.auth);
+                showToast("This account has been suspended by an administrator.", "error");
+                return null;
+            }
+
+            appState.currentUser = profileData;
+            if (profileData.theme && profileData.theme !== appState.theme) {
+                setTheme(profileData.theme, false);
+            }
+            updateAuthUI();
+            if (appState.currentView === 'dashboard') renderCustomerDashboard();
+            if (appState.currentView === 'admin') renderAdminDashboard();
+            return profileData;
+        }
+
+        async function initBackend() {
+            // Restore saved theme early
+            try {
+                const savedTheme = localStorage.getItem('uv_theme');
+                if (savedTheme === 'light' || savedTheme === 'dark') {
+                    setTheme(savedTheme, false);
+                }
+            } catch (_) {}
+
+            // Render the 1,000-card catalog immediately
+            buildMasterInventory();
+
+            // Monitor Firebase Authentication session state
+            onAuthStateChanged(appState.auth, async (fbUser) => {
+                appState.firebaseUser = fbUser;
+                if (fbUser) {
+                    await syncAuthenticatedUserProfile(fbUser);
+                } else {
+                    appState.currentUser = null;
+                    updateAuthUI();
+                }
+                attachRealtimeListeners();
+            });
+        }
+
+        function attachRealtimeListeners() {
+            if (appState.listenersAttached || !appState.db) return;
+            appState.listenersAttached = true;
+
+            const db = appState.db;
+            const appId = appState.appId;
+
+            const overridesRef = collection(db, 'artifacts', appId, 'public', 'data', 'inventory_overrides');
+            onSnapshot(overridesRef, (snap) => {
+                const map = {};
+                snap.forEach(d => {
+                    map[d.id] = d.data();
+                });
+                appState.inventoryOverrides = map;
+                buildMasterInventory();
+            }, (err) => console.warn("Overrides sync:", err.message));
+
+            const customCardsRef = collection(db, 'artifacts', appId, 'public', 'data', 'custom_cards');
+            onSnapshot(customCardsRef, (snap) => {
+                const list = [];
+                snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+                appState.customCards = list;
+                buildMasterInventory();
+            }, (err) => console.warn("Custom cards sync:", err.message));
+
+            const usersRef = collection(db, 'artifacts', appId, 'public', 'data', 'users');
+            onSnapshot(usersRef, (snap) => {
+                const list = [];
+                snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+                appState.usersList = list;
+                if (appState.currentUser) {
+                    const refreshed = list.find(u => u.id === appState.currentUser.id);
+                    if (refreshed) {
+                        appState.currentUser = { ...appState.currentUser, ...refreshed };
+                        updateAuthUI();
+                    }
+                }
+                if (appState.currentView === 'admin') renderAdminDashboard();
+            }, (err) => console.warn("Users sync:", err.message));
+
+            const ordersRef = collection(db, 'artifacts', appId, 'public', 'data', 'orders');
+            onSnapshot(ordersRef, (snap) => {
+                const list = [];
+                snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+                list.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                appState.ordersList = list;
+                if (appState.currentView === 'dashboard') renderCustomerDashboard();
+                if (appState.currentView === 'admin') renderAdminDashboard();
+            }, (err) => console.warn("Orders sync:", err.message));
+
+            const configDocRef = doc(db, 'artifacts', appId, 'public', 'data', 'app_config', 'settings');
+            onSnapshot(configDocRef, (snap) => {
+                if (snap.exists() && snap.data().defaultPrice !== undefined) {
+                    appState.globalPrice = Number(snap.data().defaultPrice);
+                    const heroPrice = document.getElementById('heroPriceDisplay');
+                    if (heroPrice) heroPrice.textContent = `$${appState.globalPrice.toFixed(2)}`;
+                    const adminPriceEl = document.getElementById('adminGlobalPriceInput');
+                    if (adminPriceEl) adminPriceEl.value = appState.globalPrice.toFixed(2);
+                    buildMasterInventory();
+                }
+            }, (err) => console.warn("Config sync:", err.message));
+        }
+
+        // =========================================================
+        // 7. NAVIGATION & VIEW ROUTER
+        // =========================================================
+        window.navigateTo = function (viewName) {
+            if (viewName === 'dashboard' && !appState.currentUser) {
+                openAuthModal('login');
+                showToast("Please sign in to access your Customer Dashboard.", "info");
+                return;
+            }
+            if (viewName === 'admin' && (!appState.currentUser || appState.currentUser.role !== 'admin')) {
+                showToast("Access Denied: Administrator role required.", "error");
+                return;
+            }
+
+            appState.currentView = viewName;
+            ['marketplace', 'how-it-works', 'dashboard', 'admin'].forEach(v => {
+                const sec = document.getElementById(`view-${v}`);
+                if (sec) sec.classList.toggle('hidden', v !== viewName);
+
+                const btn = document.getElementById(`nav-${v}`);
+                if (btn) {
+                    if (v === viewName) {
+                        btn.classList.add('bg-orange-500/10', 'text-orange-600', 'dark:text-amber-400');
+                    } else {
+                        btn.classList.remove('bg-orange-500/10', 'text-orange-600', 'dark:text-amber-400');
+                    }
+                }
+            });
+
+            if (viewName === 'dashboard') renderCustomerDashboard();
+            if (viewName === 'admin') renderAdminDashboard();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.toggleMobileMenu = function () {
+            document.getElementById('mobileMenu')?.classList.toggle('hidden');
+        };
+
+        // =========================================================
+        // 8. FIREBASE AUTHENTICATION (EMAIL/PASSWORD, GOOGLE & RESET)
+        // =========================================================
+        window.openAuthModal = function (mode = 'login') {
+            switchAuthMode(mode);
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeAuthModal = function () {
+            const modal = document.getElementById('authModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('authAlertBox').classList.add('hidden');
+        };
+
+        window.switchAuthMode = function (mode) {
+            ['login', 'register', 'recovery'].forEach(m => {
+                document.getElementById(`${m}Form`).classList.toggle('hidden', m !== mode);
+                const tab = document.getElementById(`tab-auth-${m}`);
+                if (m === mode) {
+                    tab.className = "py-2 rounded-lg bg-white dark:bg-zinc-800 shadow-sm text-slate-900 dark:text-white";
+                } else {
+                    tab.className = "py-2 rounded-lg text-slate-500 hover:text-slate-700 dark:hover:text-zinc-300";
+                }
+            });
+            document.getElementById('googleAuthSection').classList.toggle('hidden', mode === 'recovery');
+            document.getElementById('authAlertBox').classList.add('hidden');
+            const titles = {
+                login: ["Welcome Back", "Sign in with Email or Google to access your cards"],
+                register: ["Create Account", "Register with Email or Google to collect dummy cards"],
+                recovery: ["Account Recovery", "Receive a secure password reset email"]
+            };
+            document.getElementById('authModalTitle').textContent = titles[mode][0];
+            document.getElementById('authModalSubtitle').textContent = titles[mode][1];
+        };
+
+        function showAuthAlert(msg, isError = true) {
+            const box = document.getElementById('authAlertBox');
+            box.textContent = msg;
+            box.className = `mb-4 p-3 rounded-xl text-xs font-semibold ${isError ? 'bg-red-500/15 text-red-500 border border-red-500/30' : 'bg-emerald-500/15 text-emerald-500 border border-emerald-500/30'}`;
+            box.classList.remove('hidden');
+        }
+
+        window.handleRegister = async function (e) {
+            e.preventDefault();
+            if (!checkRateLimit()) return;
+
+            const username = document.getElementById('regUsername').value.trim();
+            const email = document.getElementById('regEmail').value.trim().toLowerCase();
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+
+            if (username.length < 3) {
+                showAuthAlert("Username must be at least 3 characters.");
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showAuthAlert("Please enter a valid email address.");
+                return;
+            }
+            if (password.length < 8) {
+                showAuthAlert("Password must be at least 8 characters long.");
+                return;
+            }
+            if (password !== confirmPassword) {
+                showAuthAlert("Passwords do not match.");
+                return;
+            }
+
+            const btn = document.getElementById('registerSubmitBtn');
+            const origText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i>Creating Account...`;
+
+            try {
+                const credential = await createUserWithEmailAndPassword(appState.auth, email, password);
+                await updateProfile(credential.user, { displayName: username });
+                await syncAuthenticatedUserProfile(credential.user, username);
+
+                closeAuthModal();
+                showToast(`Welcome to Unlimited Visa, ${username}!`, "success");
+            } catch (err) {
+                showAuthAlert(formatFirebaseAuthError(err));
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = origText;
+            }
+        };
+
+        window.handleLogin = async function (e) {
+            e.preventDefault();
+            if (!checkRateLimit()) return;
+
+            const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+            const password = document.getElementById('loginPassword').value;
+
+            const btn = document.getElementById('loginSubmitBtn');
+            const origText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i>Signing In...`;
+
+            try {
+                const credential = await signInWithEmailAndPassword(appState.auth, email, password);
+                const profile = await syncAuthenticatedUserProfile(credential.user);
+                if (profile) {
+                    closeAuthModal();
+                    showToast(`Signed in as ${profile.username}`, "success");
+                }
+            } catch (err) {
+                showAuthAlert(formatFirebaseAuthError(err));
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = origText;
+            }
+        };
+
+        window.handleGoogleSignIn = async function () {
+            if (!checkRateLimit()) return;
+            const btn = document.getElementById('googleSignInBtn');
+            const origHTML = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-orange-500"></i><span>Connecting to Google...</span>`;
+
+            try {
+                const result = await signInWithPopup(appState.auth, googleProvider);
+                const profile = await syncAuthenticatedUserProfile(result.user);
+                if (profile) {
+                    closeAuthModal();
+                    showToast(`Signed in with Google as ${profile.username}!`, "success");
+                }
+            } catch (err) {
+                showAuthAlert(formatFirebaseAuthError(err));
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = origHTML;
+            }
+        };
+
+        window.handleRecovery = async function (e) {
+            e.preventDefault();
+            if (!checkRateLimit()) return;
+
+            const email = document.getElementById('recEmail').value.trim().toLowerCase();
+            const btn = document.getElementById('recoverySubmitBtn');
+            const origText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i>Sending Reset Email...`;
+
+            try {
+                await sendPasswordResetEmail(appState.auth, email);
+                showAuthAlert("Password reset email sent! Please check your inbox and spam folder.", false);
+            } catch (err) {
+                showAuthAlert(formatFirebaseAuthError(err));
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = origText;
+            }
+        };
+
+        window.logoutUser = async function () {
+            try {
+                await signOut(appState.auth);
+                appState.currentUser = null;
+                updateAuthUI();
+                navigateTo('marketplace');
+                showToast("You have been signed out.", "info");
+            } catch (err) {
+                showToast("Logout error: " + err.message, "error");
+            }
+        };
+
+        function updateAuthUI() {
+            const user = appState.currentUser;
+            const guestBox = document.getElementById('authButtonsGuest');
+            const userBox = document.getElementById('authButtonsUser');
+            const navDash = document.getElementById('nav-dashboard');
+            const navAdmin = document.getElementById('nav-admin');
+            const mobDash = document.getElementById('mobile-nav-dashboard');
+            const mobAdmin = document.getElementById('mobile-nav-admin');
+
+            if (user) {
+                guestBox.classList.add('hidden');
+                userBox.classList.remove('hidden');
+                userBox.classList.add('flex');
+                navDash.classList.remove('hidden');
+                mobDash.classList.remove('hidden');
+
+                document.getElementById('headerUsername').textContent = user.username;
+                const avatarEl = document.getElementById('headerUserAvatar');
+                if (user.photoURL) {
+                    avatarEl.innerHTML = `<img src="${escapeHTML(user.photoURL)}" alt="${escapeHTML(user.username)}" class="w-full h-full object-cover rounded-lg" onerror="this.parentElement.textContent='${escapeHTML(user.username.charAt(0).toUpperCase())}'">`;
+                } else {
+                    avatarEl.textContent = user.username.charAt(0).toUpperCase();
+                }
+
+                const owned = appState.inventory.filter(c => c.ownerId === user.id).length;
+                document.getElementById('headerOwnedCount').textContent = `${owned} Card${owned === 1 ? '' : 's'}`;
+
+                if (user.role === 'admin') {
+                    navAdmin.classList.remove('hidden');
+                    mobAdmin.classList.remove('hidden');
+                } else {
+                    navAdmin.classList.add('hidden');
+                    mobAdmin.classList.add('hidden');
+                }
+            } else {
+                guestBox.classList.remove('hidden');
+                userBox.classList.add('hidden');
+                userBox.classList.remove('flex');
+                navDash.classList.add('hidden');
+                navAdmin.classList.add('hidden');
+                mobDash.classList.add('hidden');
+                mobAdmin.classList.add('hidden');
+            }
+        }
+
+        // =========================================================
+        // 9. USDT (BEP-20) PAYMENT CHECKOUT & VERIFICATION
+        // =========================================================
+        window.openCheckoutModal = function (cardId) {
+            if (!appState.currentUser) {
+                openAuthModal('login');
+                showToast("Please sign in or create an account before purchasing.", "info");
+                return;
+            }
+            const card = appState.inventory.find(c => c.id === cardId);
+            if (!card) return;
+            if (card.status === 'SOLD') {
+                showToast("This unique dummy card design has already been sold.", "error");
+                return;
+            }
+
+            appState.selectedCheckoutCard = card;
+            document.getElementById('checkoutCardPreview').innerHTML = renderCardSVG(card);
+            document.getElementById('checkoutCardSeries').textContent = `${card.series} Series`;
+            document.getElementById('checkoutCardTitle').textContent = card.name;
+            document.getElementById('checkoutCardNumber').textContent = card.fictionalNumber;
+            document.getElementById('checkoutAmountDue').textContent = `${card.price.toFixed(2)} USDT`;
+            document.getElementById('depositWalletText').textContent = RECIPIENT_WALLET;
+            document.getElementById('txHashInput').value = '';
+            document.getElementById('verificationStatusBox').classList.add('hidden');
+
+            // Generate BEP-20 QR Code
+            const qrContainer = document.getElementById('walletQrContainer');
+            qrContainer.innerHTML = '';
+            if (typeof QRCode !== 'undefined') {
+                new QRCode(qrContainer, {
+                    text: RECIPIENT_WALLET,
+                    width: 120,
+                    height: 120,
+                    colorDark: "#09090b",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            }
+
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeCheckoutModal = function () {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.copyWalletAddress = function () {
+            const tempInput = document.createElement('input');
+            tempInput.value = RECIPIENT_WALLET;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast("USDT (BEP-20) wallet address copied!", "success");
+        };
+
+        function setVerificationFeedback(status, title, details) {
+            const box = document.getElementById('verificationStatusBox');
+            const palette = {
+                pending: 'bg-amber-500/10 border-amber-500/40 text-amber-600 dark:text-amber-300',
+                confirmed: 'bg-emerald-500/10 border-emerald-500/40 text-emerald-600 dark:text-emerald-300',
+                failed: 'bg-red-500/10 border-red-500/40 text-red-600 dark:text-red-300'
+            };
+            const icons = {
+                pending: 'fa-spinner fa-spin',
+                confirmed: 'fa-circle-check',
+                failed: 'fa-circle-xmark'
+            };
+            box.className = `p-4 rounded-2xl border text-xs space-y-1 ${palette[status] || palette.pending}`;
+            box.innerHTML = `
+                <div class="font-extrabold flex items-center gap-2 text-sm">
+                    <i class="fa-solid ${icons[status]}"></i>
+                    <span>${escapeHTML(title)}</span>
+                </div>
+                <p class="leading-relaxed opacity-90">${escapeHTML(details)}</p>
+            `;
+            box.classList.remove('hidden');
+        }
+
+        window.verifyBlockchainPayment = async function (mode = 'mainnet') {
+            if (!checkRateLimit()) return;
+            const user = appState.currentUser;
+            const card = appState.selectedCheckoutCard;
+            if (!user || !card) return;
+
+            // Re-check live availability to prevent duplicate purchases
+            const liveCard = appState.inventory.find(c => c.id === card.id);
+            if (!liveCard || liveCard.status === 'SOLD') {
+                setVerificationFeedback('failed', 'Payment Status: Failed (Already Sold)', 'Another buyer has already claimed this unique card design.');
+                return;
+            }
+
+            let txHash = document.getElementById('txHashInput').value.trim();
+
+            if (mode === 'sandbox' && !txHash) {
+                const chars = '0123456789abcdef';
+                let randHex = '0x';
+                for (let i = 0; i < 64; i++) randHex += chars[Math.floor(Math.random() * 16)];
+                txHash = randHex;
+                document.getElementById('txHashInput').value = txHash;
+            }
+
+            if (!/^0x[a-fA-F0-9]{64}$/.test(txHash)) {
+                setVerificationFeedback('failed', 'Payment Status: Failed (Invalid Hash)', 'Please enter a valid 66-character BNB Smart Chain transaction hash starting with 0x.');
+                return;
+            }
+
+            // Prevent Transaction Hash Reuse
+            const normalizedHash = txHash.toLowerCase();
+            const alreadyUsed = appState.ordersList.some(o => (o.txHash || '').toLowerCase() === normalizedHash);
+            if (alreadyUsed) {
+                setVerificationFeedback('failed', 'Payment Status: Failed (Duplicate Hash)', 'This BEP-20 transaction hash has already been redeemed for an order.');
+                return;
+            }
+
+            const btnMain = document.getElementById('btnVerifyMainnet');
+            const btnSand = document.getElementById('btnVerifySandbox');
+            btnMain.disabled = true;
+            btnSand.disabled = true;
+
+            setVerificationFeedback('pending', 'Payment Status: Pending On-Chain Verification...', 'Querying BNB Smart Chain (BEP-20) receipt, USDT contract logs, recipient address, and confirmation depth...');
+
+            try {
+                if (mode === 'mainnet') {
+                    const rpcRes = await fetch(BSC_MAINNET_RPC, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            jsonrpc: '2.0',
+                            id: 1,
+                            method: 'eth_getTransactionReceipt',
+                            params: [txHash]
+                        })
+                    });
+                    const rpcJson = await rpcRes.json();
+                    const receipt = rpcJson?.result;
+
+                    if (!receipt) {
+                        throw new Error("Transaction hash not found on BNB Smart Chain Mainnet yet. Ensure it is confirmed on BSC or use QA Sandbox mode for testing.");
+                    }
+                    if (receipt.status !== '0x1') {
+                        throw new Error("Transaction reverted on-chain (status 0x0).");
+                    }
+
+                    // Validate ERC20/BEP20 Transfer(address,address,uint256) event on BSC USDT contract
+                    const TRANSFER_TOPIC = '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
+                    const expectedRecipientTopic = '0x000000000000000000000000' + RECIPIENT_WALLET.toLowerCase().replace('0x', '');
+
+                    const validTransferLog = (receipt.logs || []).find(log =>
+                        (log.address || '').toLowerCase() === BSC_USDT_CONTRACT &&
+                        log.topics &&
+                        log.topics[0]?.toLowerCase() === TRANSFER_TOPIC &&
+                        log.topics[2]?.toLowerCase() === expectedRecipientTopic
+                    );
+
+                    if (!validTransferLog) {
+                        throw new Error("No valid BEP-20 USDT transfer to our official recipient wallet was found in this transaction.");
+                    }
+
+                    const rawAmount = BigInt(validTransferLog.data);
+                    const requiredUnits = BigInt(Math.round(card.price * 1e6)) * BigInt(1e12);
+                    if (rawAmount < requiredUnits) {
+                        throw new Error(`Insufficient USDT transferred. Expected at least ${card.price.toFixed(2)} USDT.`);
+                    }
+                } else {
+                    // Brief realistic verification delay for QA Sandbox test
+                    await new Promise(r => setTimeout(r, 900));
+                }
+
+                // Mark Confirmed & Deliver Digital Asset
+                const orderId = `ORD-${Date.now().toString().slice(-7)}`;
+                const orderRecord = {
+                    orderId,
+                    userId: user.id,
+                    username: user.username,
+                    userEmail: user.email,
+                    cardId: card.id,
+                    cardName: card.name,
+                    cardSeries: card.series,
+                    fictionalNumber: card.fictionalNumber,
+                    amount: card.price,
+                    currency: 'USDT',
+                    network: 'BEP-20',
+                    txHash: normalizedHash,
+                    status: 'Confirmed',
+                    deliveryStatus: 'Delivered (< 1 min)',
+                    verificationMode: mode,
+                    createdAt: Date.now()
+                };
+
+                // Persist to Firestore (and update local state immediately so UI never blocks)
+                appState.inventoryOverrides[card.id] = {
+                    ...(appState.inventoryOverrides[card.id] || {}),
+                    status: 'SOLD',
+                    ownerId: user.id,
+                    ownerName: user.username,
+                    soldAt: Date.now()
+                };
+                appState.ordersList.unshift(orderRecord);
+                buildMasterInventory();
+
+                if (appState.db) {
+                    const overrideDocRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'inventory_overrides', card.id);
+                    await setDoc(overrideDocRef, appState.inventoryOverrides[card.id], { merge: true }).catch(() => {});
+
+                    const ordersColRef = collection(appState.db, 'artifacts', appState.appId, 'public', 'data', 'orders');
+                    await addDoc(ordersColRef, orderRecord).catch(() => {});
+                }
+
+                setVerificationFeedback('confirmed', 'Payment Status: Confirmed & Delivered!', `Transaction verified. ${card.name} (${card.id}) is now permanently assigned to your account.`);
+                showToast(`Confirmed! ${card.id} has been delivered to your account.`, "success");
+
+                setTimeout(() => {
+                    closeCheckoutModal();
+                    openReceiptModal(orderId);
+                }, 900);
+
+            } catch (err) {
+                setVerificationFeedback('failed', 'Payment Status: Failed', err.message || 'Verification failed.');
+            } finally {
+                btnMain.disabled = false;
+                btnSand.disabled = false;
+            }
+        };
+
+        // =========================================================
+        // 10. DIGITAL RECEIPT & HIGH-RESOLUTION PNG EXPORT
+        // =========================================================
+        window.openReceiptModal = function (orderId) {
+            const order = appState.ordersList.find(o => o.orderId === orderId || o.id === orderId);
+            if (!order) return;
+            const card = appState.inventory.find(c => c.id === order.cardId);
+
+            const body = document.getElementById('receiptModalBody');
+            body.innerHTML = `
+                ${card ? `<div>${renderCardSVG(card)}</div>` : ''}
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 space-y-2 text-xs">
+                    <div class="flex justify-between"><span class="text-slate-500">Receipt / Order ID:</span><span class="font-mono font-bold">${escapeHTML(order.orderId)}</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Assigned Design:</span><span class="font-bold">${escapeHTML(order.cardName)} (${escapeHTML(order.cardId)})</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Fictional Specimen ID:</span><span class="font-mono font-bold">${escapeHTML(order.fictionalNumber)}</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Paid Amount:</span><span class="font-bold text-emerald-500">${Number(order.amount).toFixed(2)} USDT (BEP-20)</span></div>
+                    <div class="flex justify-between"><span class="text-slate-500">Delivery Status:</span><span class="font-bold text-emerald-500">${escapeHTML(order.deliveryStatus || 'Delivered')}</span></div>
+                    <div class="pt-2 border-t border-slate-200 dark:border-zinc-800">
+                        <span class="text-slate-500 block mb-1">BEP-20 Transaction Hash:</span>
+                        <code class="font-mono text-[11px] break-all select-all text-orange-600 dark:text-amber-400">${escapeHTML(order.txHash)}</code>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button onclick="downloadCardPNG('${escapeHTML(order.cardId)}')" class="w-full py-3 px-4 rounded-xl text-white font-extrabold text-xs brand-gradient shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-image"></i>Download 1200×756 PNG
+                    </button>
+                    <button onclick="closeReceiptModal(); navigateTo('dashboard')" class="w-full py-3 px-4 rounded-xl font-bold text-xs border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-800">
+                        Open My Dashboard
+                    </button>
+                </div>
+            `;
+
+            const modal = document.getElementById('receiptModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeReceiptModal = function () {
+            const modal = document.getElementById('receiptModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.downloadCardPNG = function (cardId) {
+            const card = appState.inventory.find(c => c.id === cardId);
+            if (!card) return;
+
+            const canvas = document.getElementById('exportCardCanvas');
+            const ctx = canvas.getContext('2d');
+            const w = 1200, h = 756;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Rounded Card Clip
+            ctx.save();
+            ctx.beginPath();
+            ctx.roundRect(0, 0, w, h, 56);
+            ctx.clip();
+
+            // Gradient Fill
+            const grad = ctx.createLinearGradient(0, 0, w, h);
+            grad.addColorStop(0, card.color1);
+            grad.addColorStop(1, card.color2);
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, w, h);
+
+            // Subtle Decorative Rings
+            ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+            ctx.lineWidth = 36;
+            ctx.beginPath();
+            ctx.arc(960, 190, 250, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Top Brand Header
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 38px Inter, sans-serif';
+            ctx.fillText('UNLIMITED VISA', 68, 96);
+
+            ctx.fillStyle = 'rgba(255,255,255,0.82)';
+            ctx.font = '600 24px Inter, sans-serif';
+            ctx.fillText(`${card.series.toUpperCase()} EDITION • ${card.id}`, 68, 134);
+
+            // Mandatory Compliance Pill
+            ctx.fillStyle = 'rgba(0,0,0,0.52)';
+            ctx.beginPath();
+            ctx.roundRect(590, 56, 542, 60, 16);
+            ctx.fill();
+            ctx.fillStyle = '#FDE047';
+            ctx.font = '800 23px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('DUMMY – NOT VALID FOR PAYMENT', 861, 94);
+            ctx.textAlign = 'left';
+
+            // Gold EMV Chip
+            ctx.fillStyle = 'rgba(250,204,21,0.92)';
+            ctx.beginPath();
+            ctx.roundRect(68, 215, 130, 96, 16);
+            ctx.fill();
+
+            // Fictional Card Number
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '700 54px "JetBrains Mono", monospace';
+            ctx.fillText(card.fictionalNumber, 68, 448);
+
+            // Specimen Metadata
+            ctx.fillStyle = 'rgba(255,255,255,0.72)';
+            ctx.font = '700 21px Inter, sans-serif';
+            ctx.fillText('SPECIMEN HOLDER', 68, 545);
+            ctx.fillText('VALID', 560, 545);
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '700 32px "JetBrains Mono", monospace';
+            ctx.fillText(card.holderName, 68, 590);
+            ctx.fillText('00/00', 560, 590);
+
+            // Stylized VISA-Inspired Mark
+            ctx.textAlign = 'right';
+            ctx.font = 'italic 900 72px Inter, sans-serif';
+            ctx.fillText('VISA', w - 68, 592);
+            ctx.font = '800 20px Inter, sans-serif';
+            ctx.fillText('DUMMY MOCKUP', w - 68, 626);
+
+            // Bottom Compliance Banner
+            ctx.fillStyle = 'rgba(0,0,0,0.42)';
+            ctx.fillRect(0, h - 82, w, 82);
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '700 24px Inter, sans-serif';
+            ctx.fillText('FOR UI/UX DESIGN & TESTING ONLY • NON-FINANCIAL SPECIMEN', w / 2, h - 32);
+            ctx.restore();
+
+            const link = document.createElement('a');
+            link.download = `Unlimited-Visa-${card.id}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast(`Downloaded Unlimited-Visa-${card.id}.png`, "success");
+        };
+
+        // =========================================================
+        // 11. CUSTOMER DASHBOARD & PROFILE SETTINGS
+        // =========================================================
+        window.switchDashTab = function (tab) {
+            ['purchased', 'orders', 'settings'].forEach(t => {
+                document.getElementById(`dash-panel-${t}`).classList.toggle('hidden', t !== tab);
+                const btn = document.getElementById(`dash-tab-${t}`);
+                if (t === tab) {
+                    btn.className = "dash-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-orange-500/15 text-orange-600 dark:text-amber-400 whitespace-nowrap";
+                } else {
+                    btn.className = "dash-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap";
+                }
+            });
+        };
+
+        function renderCustomerDashboard() {
+            const user = appState.currentUser;
+            if (!user) return;
+
+            const dashAvatarEl = document.getElementById('dashAvatar');
+            if (user.photoURL) {
+                dashAvatarEl.innerHTML = `<img src="${escapeHTML(user.photoURL)}" alt="${escapeHTML(user.username)}" class="w-full h-full object-cover rounded-2xl" onerror="this.parentElement.textContent='${escapeHTML(user.username.charAt(0).toUpperCase())}'">`;
+            } else {
+                dashAvatarEl.textContent = user.username.charAt(0).toUpperCase();
+            }
+            document.getElementById('dashUsername').textContent = user.username;
+            document.getElementById('dashEmail').textContent = user.email;
+            document.getElementById('dashRoleBadge').textContent = user.role.toUpperCase();
+            document.getElementById('dashMemberSince').textContent = `Member since ${new Date(user.createdAt || Date.now()).toLocaleDateString()}`;
+            document.getElementById('settingsUsernameInput').value = user.username;
+
+            const ownedCards = appState.inventory.filter(c => c.ownerId === user.id);
+            document.getElementById('dashCardCountBadge').textContent = ownedCards.length;
+
+            const cardsGrid = document.getElementById('purchasedCardsGrid');
+            if (ownedCards.length === 0) {
+                cardsGrid.innerHTML = `
+                    <div class="col-span-full p-10 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-center space-y-3">
+                        <i class="fa-solid fa-credit-card text-3xl text-orange-500"></i>
+                        <h3 class="text-lg font-bold">No Virtual Dummy Cards Yet</h3>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto">Browse our 1,000 unique virtual card designs and unlock your first design for $1 USDT (BEP-20).</p>
+                        <button onclick="navigateTo('marketplace')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white brand-gradient shadow-md">Browse 1,000 Designs</button>
+                    </div>
+                `;
+            } else {
+                cardsGrid.innerHTML = ownedCards.map(card => {
+                    const order = appState.ordersList.find(o => o.cardId === card.id && o.userId === user.id);
+                    return `
+                        <div class="rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-4 space-y-4 shadow-sm">
+                            ${renderCardSVG(card)}
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-mono text-orange-500 font-bold">${escapeHTML(card.id)}</span>
+                                    <h4 class="font-bold text-sm">${escapeHTML(card.name)}</h4>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-500 text-[11px] font-bold">Delivered</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="downloadCardPNG('${escapeHTML(card.id)}')" class="py-2.5 px-3 rounded-xl text-xs font-extrabold text-white brand-gradient shadow">
+                                    <i class="fa-solid fa-download mr-1"></i>PNG Asset
+                                </button>
+                                ${order ? `
+                                    <button onclick="openReceiptModal('${escapeHTML(order.orderId)}')" class="py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-200 dark:border-zinc-800 hover:bg-slate-100 dark:hover:bg-zinc-800">
+                                        <i class="fa-solid fa-receipt mr-1"></i>Receipt
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // User Orders Table
+            const userOrders = appState.ordersList.filter(o => o.userId === user.id);
+            const tbody = document.getElementById('userOrdersTableBody');
+            if (userOrders.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-xs text-slate-500">No USDT (BEP-20) transactions recorded yet.</td></tr>`;
+            } else {
+                tbody.innerHTML = userOrders.map(o => `
+                    <tr>
+                        <td class="py-3.5 px-4 font-mono text-xs font-bold">${escapeHTML(o.orderId)}</td>
+                        <td class="py-3.5 px-4 font-semibold">${escapeHTML(o.cardName)} (${escapeHTML(o.cardId)})</td>
+                        <td class="py-3.5 px-4 font-bold text-emerald-500">${Number(o.amount).toFixed(2)} USDT</td>
+                        <td class="py-3.5 px-4 font-mono text-xs">${escapeHTML((o.txHash || '').slice(0, 14))}...</td>
+                        <td class="py-3.5 px-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-500">${escapeHTML(o.status)}</span></td>
+                        <td class="py-3.5 px-4 text-xs">${escapeHTML(o.deliveryStatus || 'Delivered')}</td>
+                        <td class="py-3.5 px-4 text-right">
+                            <button onclick="openReceiptModal('${escapeHTML(o.orderId)}')" class="px-3 py-1.5 rounded-lg text-xs font-bold brand-gradient text-white">Receipt</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        window.saveProfileSettings = async function () {
+            if (!appState.currentUser) return;
+            const newName = document.getElementById('settingsUsernameInput').value.trim();
+            if (newName.length < 3) {
+                showToast("Username must be at least 3 characters.", "error");
+                return;
+            }
+            appState.currentUser.username = newName;
+            if (appState.auth.currentUser) {
+                await updateProfile(appState.auth.currentUser, { displayName: newName }).catch(() => {});
+            }
+            if (appState.db) {
+                const userRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'users', appState.currentUser.id);
+                await updateDoc(userRef, { username: newName }).catch(() => {});
+            }
+            updateAuthUI();
+            renderCustomerDashboard();
+            showToast("Profile updated successfully!", "success");
+        };
+
+        window.updateUserPassword = async function () {
+            if (!appState.currentUser || !appState.auth.currentUser) return;
+            const pw = document.getElementById('settingsNewPassword').value;
+            if (pw.length < 8) {
+                showToast("New password must be at least 8 characters.", "error");
+                return;
+            }
+            try {
+                await updatePassword(appState.auth.currentUser, pw);
+                document.getElementById('settingsNewPassword').value = '';
+                showToast("Firebase Authentication password updated!", "success");
+            } catch (err) {
+                if (err?.code === 'auth/requires-recent-login') {
+                    showToast("For security, please log out and sign back in before changing your password.", "error");
+                } else {
+                    showToast(formatFirebaseAuthError(err), "error");
+                }
+            }
+        };
+
+        window.requestAdminElevation = async function () {
+            if (!appState.currentUser) return;
+            appState.currentUser.role = 'admin';
+            if (appState.db) {
+                const userRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'users', appState.currentUser.id);
+                await setDoc(userRef, { role: 'admin' }, { merge: true }).catch(() => {});
+            }
+            updateAuthUI();
+            renderCustomerDashboard();
+            showToast("Admin role activated! You can now open the Admin Panel.", "success");
+        };
+
+        // =========================================================
+        // 12. ADMIN DASHBOARD (ROLE-BASED ACCESS CONTROL)
+        // =========================================================
+        window.switchAdminTab = function (tab) {
+            ['orders', 'inventory', 'users'].forEach(t => {
+                document.getElementById(`admin-panel-${t}`).classList.toggle('hidden', t !== tab);
+                const btn = document.getElementById(`admin-tab-${t}`);
+                if (t === tab) {
+                    btn.className = "admin-tab-btn px-4 py-2 rounded-xl text-sm font-bold bg-red-500/15 text-red-600 dark:text-red-400 whitespace-nowrap";
+                } else {
+                    btn.className = "admin-tab-btn px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-900 whitespace-nowrap";
+                }
+            });
+            if (tab === 'inventory') renderAdminInventory();
+        };
+
+        function renderAdminDashboard() {
+            if (!appState.currentUser || appState.currentUser.role !== 'admin') return;
+
+            const confirmedOrders = appState.ordersList.filter(o => o.status === 'Confirmed');
+            const totalRevenue = confirmedOrders.reduce((sum, o) => sum + Number(o.amount || 0), 0);
+            const availCount = appState.inventory.filter(c => c.status === 'AVAILABLE').length;
+            const soldCount = appState.inventory.filter(c => c.status === 'SOLD').length;
+
+            document.getElementById('adminTotalRevenue').textContent = `$${totalRevenue.toFixed(2)}`;
+            document.getElementById('adminAvailableCards').textContent = availCount.toLocaleString();
+            document.getElementById('adminSoldCards').textContent = soldCount.toLocaleString();
+            document.getElementById('adminTotalUsers').textContent = Math.max(appState.usersList.length, 1).toLocaleString();
+
+            // Admin Orders Table
+            const ordersBody = document.getElementById('adminOrdersTableBody');
+            if (appState.ordersList.length === 0) {
+                ordersBody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-xs text-slate-500">No USDT BEP-20 orders recorded yet.</td></tr>`;
+            } else {
+                ordersBody.innerHTML = appState.ordersList.map(o => `
+                    <tr>
+                        <td class="py-3 px-4">
+                            <div class="font-mono text-xs font-bold">${escapeHTML(o.orderId)}</div>
+                            <div class="text-[11px] text-slate-400">${new Date(o.createdAt || Date.now()).toLocaleString()}</div>
+                        </td>
+                        <td class="py-3 px-4 text-xs font-semibold">${escapeHTML(o.username)}<br><span class="text-slate-400">${escapeHTML(o.userEmail)}</span></td>
+                        <td class="py-3 px-4 font-mono text-xs font-bold">${escapeHTML(o.cardId)}</td>
+                        <td class="py-3 px-4 font-bold text-emerald-500">${Number(o.amount).toFixed(2)} USDT</td>
+                        <td class="py-3 px-4 font-mono text-xs">${escapeHTML((o.txHash || '').slice(0, 16))}...</td>
+                        <td class="py-3 px-4">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${o.status === 'Confirmed' ? 'bg-emerald-500/15 text-emerald-500' : 'bg-amber-500/15 text-amber-500'}">
+                                ${escapeHTML(o.status)}
+                            </span>
+                        </td>
+                        <td class="py-3 px-4 text-right">
+                            <button onclick="openReceiptModal('${escapeHTML(o.orderId)}')" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-100 dark:bg-zinc-800 hover:bg-orange-500 hover:text-white transition-all">Inspect</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            // Admin Users Table
+            const usersList = appState.usersList.length > 0 ? appState.usersList : [appState.currentUser];
+            const usersBody = document.getElementById('adminUsersTableBody');
+            usersBody.innerHTML = usersList.map(u => {
+                const ownedCount = appState.inventory.filter(c => c.ownerId === u.id).length;
+                return `
+                    <tr>
+                        <td class="py-3 px-4 font-bold text-xs">${escapeHTML(u.username)}</td>
+                        <td class="py-3 px-4 text-xs">${escapeHTML(u.email)}</td>
+                        <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase ${u.role === 'admin' ? 'bg-red-500/15 text-red-500' : 'bg-slate-200 dark:bg-zinc-800'}">${escapeHTML(u.role)}</span></td>
+                        <td class="py-3 px-4 font-bold text-xs">${ownedCount}</td>
+                        <td class="py-3 px-4 text-xs font-semibold ${u.status === 'suspended' ? 'text-red-500' : 'text-emerald-500'}">${escapeHTML(u.status || 'active')}</td>
+                        <td class="py-3 px-4 text-right space-x-1">
+                            <button onclick="toggleUserAdminRole('${escapeHTML(u.id)}', '${escapeHTML(u.role)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold border border-slate-200 dark:border-zinc-700 hover:border-orange-500">
+                                Toggle Role
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            renderAdminInventory();
+        }
+
+        window.renderAdminInventory = function () {
+            const q = (document.getElementById('adminInventorySearch')?.value || '').trim().toLowerCase();
+            const list = appState.inventory.filter(c =>
+                !q || c.id.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || c.series.toLowerCase().includes(q)
+            ).slice(0, 60);
+
+            const tbody = document.getElementById('adminInventoryTableBody');
+            if (!tbody) return;
+            tbody.innerHTML = list.map(c => `
+                <tr>
+                    <td class="py-3 px-4 font-mono text-xs font-bold">${escapeHTML(c.id)}</td>
+                    <td class="py-3 px-4 text-xs font-semibold">${escapeHTML(c.name)} <span class="text-slate-400">(${escapeHTML(c.series)})</span></td>
+                    <td class="py-3 px-4 font-mono text-xs">${escapeHTML(c.fictionalNumber)}</td>
+                    <td class="py-3 px-4 font-bold text-xs">$${c.price.toFixed(2)}</td>
+                    <td class="py-3 px-4">
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold ${c.status === 'AVAILABLE' ? 'bg-emerald-500/15 text-emerald-500' : 'bg-red-500/15 text-red-500'}">
+                            ${escapeHTML(c.status)}
+                        </span>
+                    </td>
+                    <td class="py-3 px-4 text-right space-x-1.5">
+                        <button onclick="openEditCardModal('${escapeHTML(c.id)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-slate-100 dark:bg-zinc-800 hover:bg-orange-500 hover:text-white">Edit</button>
+                        <button onclick="deleteAdminCard('${escapeHTML(c.id)}')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-red-500/15 text-red-500 hover:bg-red-600 hover:text-white">Remove</button>
+                    </td>
+                </tr>
+            `).join('');
+        };
+
+        window.updateGlobalPrice = async function () {
+            if (!appState.currentUser || appState.currentUser.role !== 'admin') return;
+            const val = parseFloat(document.getElementById('adminGlobalPriceInput').value);
+            if (isNaN(val) || val <= 0) {
+                showToast("Enter a valid USDT price greater than 0.", "error");
+                return;
+            }
+            appState.globalPrice = val;
+            document.getElementById('heroPriceDisplay').textContent = `$${val.toFixed(2)}`;
+            if (appState.db) {
+                const configDocRef = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'app_config', 'settings');
+                await setDoc(configDocRef, { defaultPrice: val }, { merge: true }).catch(() => {});
+            }
+            buildMasterInventory();
+            showToast(`Global card price updated to $${val.toFixed(2)} USDT`, "success");
+        };
+
+        window.openAddCardModal = function () {
+            document.getElementById('adminCardModalTitle').textContent = 'Add New Dummy Card Design';
+            document.getElementById('editCardIdHidden').value = '';
+            document.getElementById('adminCardName').value = '';
+            document.getElementById('adminCardPrice').value = appState.globalPrice.toFixed(2);
+            const modal = document.getElementById('adminCardModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.openEditCardModal = function (cardId) {
+            const card = appState.inventory.find(c => c.id === cardId);
+            if (!card) return;
+            document.getElementById('adminCardModalTitle').textContent = `Edit ${card.id}`;
+            document.getElementById('editCardIdHidden').value = card.id;
+            document.getElementById('adminCardName').value = card.name;
+            document.getElementById('adminCardSeries').value = card.series;
+            document.getElementById('adminCardPrice').value = card.price.toFixed(2);
+            const modal = document.getElementById('adminCardModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        window.closeAdminCardModal = function () {
+            const modal = document.getElementById('adminCardModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        window.handleSaveAdminCard = async function (e) {
+            e.preventDefault();
+            if (!appState.currentUser || appState.currentUser.role !== 'admin') return;
+
+            const editId = document.getElementById('editCardIdHidden').value;
+            const name = document.getElementById('adminCardName').value.trim();
+            const series = document.getElementById('adminCardSeries').value;
+            const price = parseFloat(document.getElementById('adminCardPrice').value) || 1.00;
+            const color1 = document.getElementById('adminCardColor1').value;
+            const color2 = document.getElementById('adminCardColor2').value;
+
+            if (editId) {
+                appState.inventoryOverrides[editId] = {
+                    ...(appState.inventoryOverrides[editId] || {}),
+                    name, series, price, color1, color2
+                };
+                if (appState.db) {
+                    const ref = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'inventory_overrides', editId);
+                    await setDoc(ref, appState.inventoryOverrides[editId], { merge: true }).catch(() => {});
+                }
+                showToast(`Updated ${editId} successfully!`, "success");
+            } else {
+                const nextNum = 1001 + appState.customCards.length;
+                const newCardId = `UV-${String(nextNum).padStart(4, '0')}`;
+                const newCard = { cardId: newCardId, name, series, price, color1, color2, status: 'AVAILABLE' };
+                appState.customCards.push(newCard);
+                if (appState.db) {
+                    const colRef = collection(appState.db, 'artifacts', appState.appId, 'public', 'data', 'custom_cards');
+                    await addDoc(colRef, newCard).catch(() => {});
+                }
+                showToast(`Added ${newCardId} to live inventory!`, "success");
+            }
+
+            closeAdminCardModal();
+            buildMasterInventory();
+        };
+
+        window.deleteAdminCard = async function (cardId) {
+            if (!appState.currentUser || appState.currentUser.role !== 'admin') return;
+            appState.inventoryOverrides[cardId] = {
+                ...(appState.inventoryOverrides[cardId] || {}),
+                deleted: true
+            };
+            if (appState.db) {
+                const ref = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'inventory_overrides', cardId);
+                await setDoc(ref, { deleted: true }, { merge: true }).catch(() => {});
+            }
+            buildMasterInventory();
+            showToast(`Removed ${cardId} from marketplace.`, "info");
+        };
+
+        window.toggleUserAdminRole = async function (userId, currentRole) {
+            if (!appState.currentUser || appState.currentUser.role !== 'admin') return;
+            const nextRole = currentRole === 'admin' ? 'customer' : 'admin';
+            if (appState.db) {
+                const ref = doc(appState.db, 'artifacts', appState.appId, 'public', 'data', 'users', userId);
+                await setDoc(ref, { role: nextRole }, { merge: true }).catch(() => {});
+            }
+            showToast(`Updated user role to ${nextRole.toUpperCase()}`, "success");
+        };
+
+        // =========================================================
+        // 13. INITIALIZE APPLICATION ON LOAD
+        // =========================================================
+        initBackend();
+    </script>
+</body>
+</html>
